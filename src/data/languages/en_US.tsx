@@ -189,7 +189,8 @@ export default {
 			Kokona: 'Kokona',
 			Yvette: 'Yvette',
 			Flavia: 'Flavia',
-			Yugiri: "Yugiri"
+			Yugiri: "Yugiri",
+			Leona: "Leona"
 		},
 		TheScissors: {
 			Ming: 'Ming',

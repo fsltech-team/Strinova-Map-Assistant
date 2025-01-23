@@ -190,7 +190,8 @@ export default {
 			Kokona: '心夏',
 			Yvette: 'イヴェット',
 			Flavia: 'フラヴィア',
-			Yugiri: "Yugiri"
+			Yugiri: "Yugiri",
+			Leona: "Leona"
 		},
 		TheScissors: {
 			Ming: 'ミン',

@@ -11,7 +11,7 @@ export default {
 		notshowntoday: "Got it",
 		pin: {
 			title: "Milestone Release V1.0",
-			date: "2024.11.12",
+			date: "2025.1.23",
 			summary: "Milestone release complete.You'll find our social media at the footer of the page.",
 			data: {}
 		},
@@ -281,6 +281,18 @@ export default {
 			skillUltimateDescription: `Summons a large wave of mist that slowly advances forwards, reducing the max shields of any enemy struck and also applying the Corrosion effect. `,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Leona: {
+			Name: "蕾欧娜",
+			Type: "守护",
+			skillActiveName: `弦能掩墙`,
+			skillActiveDescription: `蕾欧娜可以在指定平地或斜坡生成两种角度的正方形建筑块。方块生成会消耗技能点数及弦能条。方块最多同时存在16个。`,
+			skillPassiveName: `劳逸结合`,
+			skillPassiveDescription: `蕾欧娜在弦化状态会持续恢复弦能，当弦能高于50%时，提高自身移动速度；低于50%时，逐渐恢复自身护甲。`,
+			skillUltimateName: `纯净坚城`,
+			skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
+			subName: `防弹护窗`,
+			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Ming: {
 			Name: "Ming",

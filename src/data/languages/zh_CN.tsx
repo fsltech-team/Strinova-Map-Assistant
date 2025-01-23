@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "今日不再显示",
 		pin: {
-			title: "正式版发布",
-			date: "2024.11.12",
-			summary: "网站正式版已上线，欢迎使用！有任何问题可以通过网页最下方联系我们。",
+			title: "新增超弦体-雷欧娜",
+			date: "2025.1.23",
+			summary: "各位新年快乐！（虽然这么说是不是晚了点），这次更新添加了超弦体-雷欧娜。新的地图因为要不到文件所以暂时更新不了（恼）。直到现在才更新也是因为迟迟要不到想要的美术素材（悲）。大家都在忙，能理解（哀）。",
 			data: {}
 		},
 		history: []
@@ -282,6 +282,18 @@ export default {
 			skillUltimateDescription: `召唤大范围的毒雾向前方缓慢推进，腐蚀范围内敌方角色的护甲上限。`,
 			subName: `腐蚀溶液`,
 			subDescription: `忧雾向目标区域投掷毒液装置，毒液装置落地时会爆开并制造一片腐蚀区域，对区域内的敌人造成伤害与减速效果，弦化状态的敌人受到额外伤害。`,
+		},
+		Leona: {
+			Name: "蕾欧娜",
+			Type: "守护",
+			skillActiveName: `弦能掩墙`,
+			skillActiveDescription: `蕾欧娜可以在指定平地或斜坡生成两种角度的正方形建筑块。方块生成会消耗技能点数及弦能条。方块最多同时存在16个。`,
+			skillPassiveName: `劳逸结合`,
+			skillPassiveDescription: `蕾欧娜在弦化状态会持续恢复弦能，当弦能高于50%时，提高自身移动速度；低于50%时，逐渐恢复自身护甲。`,
+			skillUltimateName: `纯净坚城`,
+			skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
+			subName: `防弹护窗`,
+			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Ming: {
 			Name: "明",

@@ -31,6 +31,8 @@ interface AppShellProps {
 
 const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 	const [drawCanvasRef, drawCanvasEditor] = usePikaso({
+		width: 1000,
+		height: 1000,
 		selection: {
 			transformer: {
 				borderStroke: 'rgba(77, 238, 234, 1)',
@@ -44,6 +46,8 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 		}
 	})
 	const [drawMapRef, drawMapEditor] = usePikaso({
+		width: 1000,
+		height: 1000,
 		selection: {
 			interactive: false,
 			keyboard: {
@@ -142,7 +146,6 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 			<MapCanvas
 				currentMap={mapPrepareMode ? presentMapURL.imgPrepareLink : presentMapURL.imgBlankLink}
 				pikasoEditor={drawMapEditor}
-				setCurrentMap={setPresentMap}
 				pikasoRef={drawMapRef}
 				style={{ position: 'absolute', top: '0', left: '0' }}
 				panelcollaps={panelcollaps}

@@ -113,6 +113,7 @@ export default {
 		character: 'Character',
 		skill: 'Skills',
 		grenade: 'Grenades',
+		other: 'Others',
 		lineup: 'Grenade Lineups',
 		skilllineup: 'Skill Lineups',
 		mobaisuperjump: 'Baimo Super Jumps',
@@ -469,6 +470,16 @@ export default {
 		Alarm: 'Alarm',
 		WindstormGrenade: 'Windstorm Grenade',
 		SnowBall: 'Snow Ball'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: 'Mark',

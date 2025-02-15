@@ -114,6 +114,7 @@ export default {
 		character: '超弦体',
 		skill: '技能',
 		grenade: '战术道具',
+		other: 'Others',
 		lineup: '战术道具点位',
 		skilllineup: '技能点位',
 		mobaisuperjump: '白墨超级跳点位',
@@ -470,6 +471,16 @@ export default {
 		Alarm: '警报器',
 		WindstormGrenade: '风场雷',
 		SnowBall: '雪球'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: '画笔',

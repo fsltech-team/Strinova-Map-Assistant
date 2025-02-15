@@ -1,17 +1,15 @@
 import React, { useLayoutEffect } from 'react'
 import { Pikaso, type BaseShapes } from 'pikaso'
-import { MapName } from '../../../data/maplist'
 
 interface PikasoMapProps {
   pikasoRef: React.RefObject<HTMLDivElement>
   pikasoEditor: Pikaso<BaseShapes> | null
-  setCurrentMap: React.Dispatch<React.SetStateAction<MapName>>
   currentMap: string
   style?: React.CSSProperties
   panelcollaps: boolean
 }
 
-const MapCanvas: React.FC<PikasoMapProps> = ({ pikasoRef, pikasoEditor, currentMap, style, setCurrentMap, panelcollaps }) => {
+const MapCanvas: React.FC<PikasoMapProps> = ({ pikasoRef, pikasoEditor, currentMap, style, panelcollaps }) => {
   let rescaleTO: any
   const rescaleEditor = (timeout: number = 0) => {
     clearTimeout(rescaleTO)
@@ -20,6 +18,7 @@ const MapCanvas: React.FC<PikasoMapProps> = ({ pikasoRef, pikasoEditor, currentM
         if (!pikasoEditor) return
         const scaleSize = 1000
         pikasoEditor?.board.stage.setSize({width: scaleSize, height: scaleSize})
+        pikasoEditor?.board.rescale()
     
         const image = new Image()
         image.src = currentMap
@@ -30,7 +29,7 @@ const MapCanvas: React.FC<PikasoMapProps> = ({ pikasoRef, pikasoEditor, currentM
             size: 'contain',
             x: pikasoEditor.board.stage.width() / 2 - image.width / 2 / scale
           })
-          pikasoEditor?.board.rescale()
+          // pikasoEditor?.board.rescale()
         }
       })
     },timeout)
@@ -42,7 +41,11 @@ const MapCanvas: React.FC<PikasoMapProps> = ({ pikasoRef, pikasoEditor, currentM
     return () => {
       window.removeEventListener('resize', ()=>rescaleEditor())
     }
-  }, [currentMap, setCurrentMap, pikasoEditor, pikasoEditor?.board.background, pikasoEditor?.board.stage])
+  }, [
+    currentMap,
+    pikasoEditor?.board.background,
+  ])
+  
 
   useLayoutEffect(() => {
     rescaleEditor(100)

@@ -1,5 +1,5 @@
 import { factions, PUS, TheScissors, Urbino } from "../data/characters/factions"
-import { grenades } from "../data/grenades"
+import { grenades, others } from "../data/grenades"
 import { MapName } from "../data/maplist"
 
 export enum Languages {
@@ -98,6 +98,7 @@ interface Sidebar {
 	character: string
 	skill: string
 	grenade: string
+	other: string
 	lineup: string
 	skilllineup: string
 	mobaisuperjump: string
@@ -198,6 +199,9 @@ export interface I18nData {
 	characterTypes: CharacterTypes
 	grenades: {
 		[key in grenades]: string
+	}
+	others: {
+		[key in others]: string
 	}
 	markbox: MarkBox
 }

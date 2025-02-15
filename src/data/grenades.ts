@@ -54,3 +54,57 @@ export const grenadeData: grenadeData[] = [
 		imageLink: "https://s2.loli.net/2024/09/24/2UAiJIGMwRKauXt.png"
 	}
 ]
+
+
+
+
+export enum others {
+	Bomb = "Bomb",
+	BombA = "BombA",
+	BombB = "BombB",
+	BombC = "BombC",
+	Focus = "Focus",
+	Warning = "Warning",
+	Flag = "Flag",
+	Danger = "Danger",
+}
+
+export interface otherData {
+	other: others;
+	imageLink: string;
+}
+
+export const otherData: otherData[] = [
+	{
+		other: others.Bomb,
+		imageLink: "https://cdn.sa.net/2025/02/15/lvcYUqwA7rMsfEu.png"
+	},
+	{
+		other: others.BombA,
+		imageLink: "https://cdn.sa.net/2025/02/15/1jothFAux6P95Ve.png"
+	},
+	{
+		other: others.BombB,
+		imageLink: "https://cdn.sa.net/2025/02/15/TvUCl3QqiFyKj2r.png"
+	},
+	{
+		other: others.BombC,
+		imageLink: "https://cdn.sa.net/2025/02/15/6NUMSbevIiap534.png"
+	},
+	{
+		other: others.Focus,
+		imageLink: "https://cdn.sa.net/2025/02/15/SeVw3s7OgrbyaCz.png"
+	},
+	{
+		other: others.Warning,
+		imageLink: "https://cdn.sa.net/2025/02/15/7Ev1A5tIfQgiJLl.png"
+	},
+	{
+		other: others.Flag,
+		imageLink: "https://cdn.sa.net/2025/02/15/Yr62e537ER4Musv.png"
+	},
+	{
+		other: others.Danger,
+		imageLink: "https://cdn.sa.net/2025/02/15/M1RvciEu7AwTpnt.png"
+	},
+]

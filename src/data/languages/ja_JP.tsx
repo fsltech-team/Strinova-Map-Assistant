@@ -114,6 +114,7 @@ export default {
 		character: 'キャラクター（超弦体）',
 		skill: 'スキル',
 		grenade: '戦術アイテム',
+		other: 'Others',
 		lineup: '戦術アイテムのポイント',
 		skilllineup: 'スキルポイント',
 		mobaisuperjump: '白墨スーパージャンプ',
@@ -470,6 +471,16 @@ export default {
 		Alarm: '警報器',
 		WindstormGrenade: '風雷ボム',
 		SnowBall: '雪玉'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: 'マーク',

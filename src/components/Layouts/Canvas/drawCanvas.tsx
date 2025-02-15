@@ -70,11 +70,6 @@ const DrawMap: React.FC<PikasoMapProps> = ({
         pikasoEditor?.shapes.pencil.stopDrawing()
         break
     }
-    rescaleEditor()
-    window.addEventListener('resize', ()=>rescaleEditor())
-    return () => {
-      window.removeEventListener('resize', ()=>rescaleEditor())
-    }
   }, [
     currentMap,
     penColor,
@@ -88,6 +83,17 @@ const DrawMap: React.FC<PikasoMapProps> = ({
     pikasoEditor?.shapes.line,
     pikasoEditor?.shapes.pencil,
     pikasoEditor?.shapes.arrow,
+  ])
+
+  useLayoutEffect(() => {
+    rescaleEditor()
+    window.addEventListener('resize', ()=>rescaleEditor())
+    return () => {
+      window.removeEventListener('resize', ()=>rescaleEditor())
+    }
+  }, [
+    currentMap,
+    pikasoEditor?.board.background,
   ])
 
   useLayoutEffect(() => {

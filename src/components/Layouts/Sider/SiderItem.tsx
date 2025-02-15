@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Avatar, Card, Popover, TabPane, Tabs, Tooltip } from '@douyinfe/semi-ui'
 import { characterData } from '../../../data/characters/characterRegistry.ts'
-import { grenadeData } from '../../../data/grenades.ts'
+import { grenadeData, otherData } from '../../../data/grenades.ts'
 import { LanguageContext } from '../../../contexts/LanguageContext.ts'
 import { GrDrag } from "react-icons/gr";
 import { setDragValue } from '../../../data/dragAndDrop.ts'
@@ -164,6 +164,34 @@ export const GrenadeSiderItem: React.FC<GrenadeSiderItemProps> = ({ data }) => {
 
   return (
     <Tooltip position='topLeft' content={currentLanguage.grenades[data.grenade]}>
+      <span draggable onDragStart={(e) => { onDragStart(e, data) }} onTouchStart={(e) => { onTouchStart(e, data) }}>
+        <Avatar
+          src={data.imageLink}
+          style={{ margin: '0.25rem', backgroundColor: "grey", height: "48px", width: "48px" }}
+          hoverMask={<HoverMask />}
+        />
+      </span>
+    </Tooltip>
+  )
+}
+
+interface OtherSiderItemProps {
+  data: otherData
+}
+
+export const OtherSiderItem: React.FC<OtherSiderItemProps> = ({ data }) => {
+  const currentLanguage = useContext(LanguageContext)
+
+  const onDragStart = (_e: React.DragEvent<HTMLSpanElement>, data: otherData) => {
+    setDragValue({ type: 'imageLink', value: data.imageLink })
+  }
+
+  const onTouchStart = (_e: React.TouchEvent<HTMLSpanElement>, data: otherData) => {
+    setDragValue({ type: 'imageLink', value: data.imageLink })
+  }
+
+  return (
+    <Tooltip position='topLeft' content={currentLanguage.others[data.other]}>
       <span draggable onDragStart={(e) => { onDragStart(e, data) }} onTouchStart={(e) => { onTouchStart(e, data) }}>
         <Avatar
           src={data.imageLink}

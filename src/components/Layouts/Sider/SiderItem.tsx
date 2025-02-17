@@ -195,7 +195,8 @@ export const OtherSiderItem: React.FC<OtherSiderItemProps> = ({ data }) => {
       <span draggable onDragStart={(e) => { onDragStart(e, data) }} onTouchStart={(e) => { onTouchStart(e, data) }}>
         <Avatar
           src={data.imageLink}
-          style={{ margin: '0.25rem', backgroundColor: "grey", height: "48px", width: "48px" }}
+          shape='square'
+          style={{ margin: '0.25rem',padding:"0.5rem", backgroundColor: "grey", height: "30px", width: "30px" }}
           hoverMask={<HoverMask />}
         />
       </span>

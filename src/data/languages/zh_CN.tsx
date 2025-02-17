@@ -114,7 +114,7 @@ export default {
 		character: '超弦体',
 		skill: '技能',
 		grenade: '战术道具',
-		other: 'Others',
+		other: '其他',
 		lineup: '战术道具点位',
 		skilllineup: '技能点位',
 		mobaisuperjump: '白墨超级跳点位',

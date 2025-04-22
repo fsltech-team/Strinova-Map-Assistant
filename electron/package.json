@@ -17,7 +17,6 @@
     "type": "git",
     "url": "https://github.com/fsltech-team/Strinova-Map-Assistant.git"
   },
-  "dependencies": {},
   "devDependencies": {
     "electron": "^35.2.0",
     "electron-builder": "^26.0.12",
@@ -36,9 +35,9 @@
       "target": "AppImage"
     },
     "directories": {
-        "buildResources": "build",
-        "output": "dist",
-        "app": "."
+      "buildResources": "build",
+      "output": "dist",
+      "app": "."
     },
     "extraResources": [
       {
@@ -46,12 +45,12 @@
         "to": "assets/"
       }
     ],
-   "publish": [
-        {
-            "provider": "github",
-            "owner": "fsltech",
-            "repo": "Strinova-Map-Assistant"
-        }
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "fsltech",
+        "repo": "Strinova-Map-Assistant"
+      }
     ]
   }
 }

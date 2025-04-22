@@ -7,7 +7,7 @@ function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 1400,
-    height: 820,
+    height: 940,
     icon: 'https://strinova.fsltech.cn/favicon.ico' ? 'https://strinova.fsltech.cn/favicon.ico' : 'favicon.ico',
     title: "Strinova Map Assistant",
     frame: true,

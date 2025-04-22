@@ -3,9 +3,22 @@ const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
 const { autoUpdater } = require("electron-updater")
 
+const gotTheLock = app.requestSingleInstanceLock({ myKey: 'myValue' })
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (_event, _commandLine, _workingDirectory, _additionalData) => {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
+}
+
+let mainWindow
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1400,
     height: 940,
     icon: 'https://strinova.fsltech.cn/favicon.ico' ? 'https://strinova.fsltech.cn/favicon.ico' : 'favicon.ico',

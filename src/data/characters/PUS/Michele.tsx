@@ -6,7 +6,7 @@ const character: characterData = {
 	id: PUS.Michele,
 	defense: {
 		canvasImage: 'https://s2.loli.net/2024/09/29/29JH5SlaTdCwgFR.png',
-		bodyImage: 'https://s2.loli.net/2024/11/10/L91feWEuwqX3sog.png',
+		bodyImage: 'https://cdn.sa.net/2025/04/22/2MLSe7fg8tsQ3br.png',
 		skills: {
 			active: {
 				skillIcon: 'https://s2.loli.net/2024/09/25/8iCzWDaNQPSxqvw.png',

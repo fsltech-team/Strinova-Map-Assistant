@@ -7,7 +7,7 @@ const character: characterData = {
 	id: PUS.Yugiri,
 	defense: {
 		canvasImage: 'https://s2.loli.net/2024/11/10/Jq58o4vKDYUCcl1.png',
-		bodyImage: 'https://s2.loli.net/2024/11/10/ApQHRnSsdcv1N2y.png',
+		bodyImage: 'https://cdn.sa.net/2025/04/22/JZ2543e9CUYDh8p.png',
 		skills: {
 			active: {
 				skillIcon: 'https://s2.loli.net/2024/11/10/oW4UsSziGHnhLx2.png',

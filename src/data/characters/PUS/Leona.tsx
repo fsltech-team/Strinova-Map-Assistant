@@ -7,7 +7,7 @@ const character: characterData = {
 	id: PUS.Leona,
 	defense: {
 		canvasImage: 'https://cdn.sa.net/2025/01/23/WY9ijCwS7e4OPNM.png',
-		bodyImage: 'https://cdn.sa.net/2025/01/23/FRxX31GCcpaUNTP.png',
+		bodyImage: 'https://cdn.sa.net/2025/04/22/snfMAvm1384Qc5h.png',
 		skills: {
 			active: {
 				skillIcon: 'https://cdn.sa.net/2025/01/23/8bA3kca54WlQi96.png',

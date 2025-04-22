@@ -7,7 +7,7 @@ const character: characterData = {
 	id: TheScissors.Lawine,
 	attack: {
 		canvasImage: 'https://s2.loli.net/2024/09/29/DeK5afJoAhpyNcM.png',
-		bodyImage: 'https://s2.loli.net/2024/11/10/Gb5B6xYuMRnCz7I.png',
+		bodyImage: 'https://cdn.sa.net/2025/04/22/f8dgSBZ2zsvV1jL.png',
 		skills: {
 			active: {
 				skillIcon: 'https://s2.loli.net/2024/09/25/gOFlGIzPjxbpYKw.png',

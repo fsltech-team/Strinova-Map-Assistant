@@ -61,6 +61,15 @@ const contributeList = [
         X: "",
         twich: "",
     },
+    {
+        job: ["code"],
+        name: "Haru Yakumo",
+        icon: "https://cdn.sa.net/2025/04/22/fF9G5vbJRCckiLI.webp",
+        github: "https://github.com/huequica",
+        bili: "",
+        X: "https://x.com/huequica",
+        twich: "https://twitch.tv/huequica",
+    },
 ]
 
 const ContributeBox = (props: ContributeBoxPops) => {

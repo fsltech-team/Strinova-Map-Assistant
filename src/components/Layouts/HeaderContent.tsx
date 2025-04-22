@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { i18nData } from '../../data/i18n'
-import { Button, Nav, Select,Toast } from '@douyinfe/semi-ui'
+import { Button, Nav, Select, Toast } from '@douyinfe/semi-ui'
 import Title from '@douyinfe/semi-ui/lib/es/typography/title'
 import { MapName } from '../../data/maplist'
 import { MdOutlineTranslate, MdLightMode, MdDarkMode, MdCastConnected, MdContentCopy } from 'react-icons/md'
@@ -53,7 +53,7 @@ const HeaderContent: React.FC<HeaderContentProps> = ({
         <Nav.Header>
           <Title style={{ whiteSpace: 'nowrap' }}>{currentLanguage.title}</Title>
         </Nav.Header>
-        <Nav.Item style={{ flexDirection: 'column', justifyContent: 'center' }}>
+        <div style={{ flexDirection: 'column', justifyContent: 'center',marginRight: '10px'}}>
           <ChangeMapButton
             editor={editor}
             currentLanguage={currentLanguage}
@@ -61,16 +61,16 @@ const HeaderContent: React.FC<HeaderContentProps> = ({
             setPresentMap={setPresentMap}
             setPresentMapURL={setPresentMapURL}
           />
-        </Nav.Item>
-        <Nav.Item style={{ flexDirection: 'column', justifyContent: 'center' }}>
+        </div>
+        <div style={{ flexDirection: 'column', justifyContent: 'center',marginRight: '10px' }}>
           <ChangeHighlightButton content={currentLanguage.mapsetting.TeamHighlight} mapPrepareMode={mapPrepareMode} setMapPrepareMode={setMapPrepareMode} />
-        </Nav.Item>
-        <Nav.Item style={{ flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-            <Button icon={<MdCastConnected style={{ fontSize: 32 }} />} size={'large'} onClick={() => { share() }} />
-            <Button icon={<MdContentCopy style={{ fontSize: 32 }} />} size={'large'} onClick={() => { copyUrl() }} />
+        </div>
+        <div style={{}}>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <Button icon={<MdCastConnected style={{ fontSize: 32 }} />} size={'large'} onClick={() => { share() }} style={{margin:"2px"}}/>
+            <Button icon={<MdContentCopy style={{ fontSize: 32 }} />} size={'large'} onClick={() => { copyUrl() }} style={{margin:"2px"}} />
           </div>
-        </Nav.Item>
+        </div>
         <Nav.Footer>
           <Announcement name={currentLanguage.announcement} content={currentLanguage.announcementdata} />
           <Button

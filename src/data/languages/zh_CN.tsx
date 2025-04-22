@@ -138,7 +138,8 @@ export default {
 			EulerPort: '欧拉港口',
 			CauchyDistrict: '柯西街区',
 			Area88: '88区',
-			Base404: '404基地'
+			Base404: '404基地',
+			Ocarnus: '奥卡努斯'
 		},
 		TeamHighlight: '区分阵营',
 		TeamHighlightOptions: {
@@ -201,7 +202,8 @@ export default {
 			Reiichi: '令',
 			Kanami: '香奈美',
 			Eika: '艾卡',
-			Fragrans: '珐格兰丝'
+			Fragrans: '珐格兰丝',
+			Mara:'玛拉'
 		},
 		Urbino: {
 			Celestia: '星绘',
@@ -380,6 +382,18 @@ export default {
 			skillUltimateDescription: `珐格兰丝会以自己为中心制造强烈香氛区域，区域内友军会获得高额射速、移速提升和生命值恢复，该效果不会衰减且生命值恢复不会被伤害中断，释放期间珐格兰丝无法使用武器，但会获得大幅减伤。`,
 			subName: `香语众氛`,
 			subDescription: `珐格兰丝投掷出一瓶治疗香水，治疗香水触碰到障碍物时爆炸生效，制造一片回复生命区域，进入区域内的人会被赋予一段缓慢回复生命效果，即使离开区域也会持续一段时间。`,
+		},
+		Mara: {
+			Name: "玛拉",
+			Type: "决斗",
+			skillActiveName: `直击灵魂`,
+			skillActiveDescription: `向前施放鬼手，命中最近一名非倒地的敌方角色，使其灵魂出窍和减速。仅玛拉可通过武器攻击此灵魂球，对灵魂球造成伤害时，基于此一定比例给予敌人忽视护甲的血量伤害。敌人侧身或者飘飞时附着的灵魂球会缩小。`,
+			skillPassiveName: `摄魂侵魄`,
+			skillPassiveDescription: `玛拉使用武器对非满血敌方角色造成伤害时，会基于此伤害的一定比例恢复生命值以及对敌方角色造成额外忽视护甲的生命值伤害。此恢复效果同样适应于主动技能的灵魂球传导伤害。`,
+			skillUltimateName: `死神来了`,
+			skillUltimateDescription: `选择离自己最近的一名敌方角色施加死亡印记：该敌人会被沉默，及仅玛拉可视的暴露状态。在此期间当玛拉参与击倒或击杀此角色，此印记会传导给一定范围内离玛拉最近的非倒地敌人，并重新计时。此效果会持续到玛拉死亡或者时间结束。`,
+			subName: `亡灵漫步`,
+			subDescription: `开启后，玛拉弦化时会进入特殊隐身状态，当敌人逐渐靠近时玛拉才会显形；且弦化移速增加；在终极技能触发时，显形的最远距离会进一步缩小。`,
 		},
 		Celestia: {
 			Name: "星绘",

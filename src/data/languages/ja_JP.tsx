@@ -138,7 +138,8 @@ export default {
 			CauchyDistrict: 'コーシー街区',
 			EulerPort: 'オイラー港',
 			Area88: '88街区',
-			Base404: '404基地'
+			Base404: '404基地',
+			Ocarnus: '奥卡努斯'
 		},
 		TeamHighlight: 'チームハイライト',
 		TeamHighlightOptions: {
@@ -201,7 +202,8 @@ export default {
 			Reiichi: '令一',
 			Kanami: '香奈美',
 			Eika: 'アイカ',
-			Fragrans: 'フラグランス'
+			Fragrans: 'フラグランス',
+			Mara:'マーラー'
 		},
 		Urbino: {
 			Celestia: '星理恵',
@@ -380,6 +382,18 @@ export default {
 			skillUltimateDescription: `フラグランスが自身を中心とした強力な香水エリアを生成し、エリア内の味方の射撃速度、移動速度を大幅に上昇させ、ヘルスを回復させる。効果時間中、フラグランスは弦化および武器の使用ができなくなる代わりに大幅なダメージ軽減効果を獲得する`,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Mara: {
+			Name: "Mara",
+			Type: "Duellist",
+			skillActiveName: `-`,
+			skillActiveDescription: `-`,
+			skillPassiveName: `-`,
+			skillPassiveDescription: `-`,
+			skillUltimateName: `-`,
+			skillUltimateDescription: `-`,
+			subName: `-`,
+			subDescription: `-`,
 		},
 		Celestia: {
 			Name: "星理恵",

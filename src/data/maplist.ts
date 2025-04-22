@@ -6,7 +6,8 @@ export enum MapName {
   EulerPort = "EulerPort",
   CauchyDistrict = "CauchyDistrict",
   Area88 = "Area88",
-  Base404 = "Base404"
+  Base404 = "Base404",
+  Ocarnus = "Ocarnus"
 }
 
 interface MapList {
@@ -44,6 +45,10 @@ export const mapList: MapList[] = [
     map: MapName.Base404,
     imgPrepareLink: "https://s2.loli.net/2024/09/24/XfMi4qcV5zmTy78.png",
     imgBlankLink: "https://s2.loli.net/2024/09/24/pjGMHJClRsXEoAf.png"
+  }, {
+    map: MapName.Ocarnus,
+    imgPrepareLink: "https://cdn.sa.net/2025/04/22/HAisD5nj9Plz4dV.png",
+    imgBlankLink: "https://cdn.sa.net/2025/04/22/pzYjVHbdiL3qn7c.webp"
   }
 ];
 

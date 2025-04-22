@@ -137,7 +137,8 @@ export default {
 			CauchyDistrict: 'Cauchy District',
 			EulerPort: 'Port Euler',
 			Area88: 'Area 88',
-			Base404: 'Base 404'
+			Base404: 'Base 404',
+			Ocarnus: 'Ocarnus'
 		},
 		TeamHighlight: 'Team Highlight',
 		TeamHighlightOptions: {
@@ -200,7 +201,8 @@ export default {
 			Reiichi: 'Reiichi',
 			Kanami: 'Kanami',
 			Eika: 'Eika',
-			Fragrans: 'Fragrans'
+			Fragrans: 'Fragrans',
+			Mara: 'Mara'
 		},
 		Urbino: {
 			Celestia: 'Celestia',
@@ -379,6 +381,18 @@ export default {
 			skillUltimateDescription: `Fragrans will create an area of intense fragrance centered on herself, and allies in the area will gain a high rate of fire, increased movement speed, and health regeneration, the effect will not be decayed, and Fragrans will not be able to use weapons during the release, but will receive a significant damage reduction.`,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Mara: {
+			Name: "Mara",
+			Type: "Duellist",
+			skillActiveName: `-`,
+			skillActiveDescription: `-`,
+			skillPassiveName: `-`,
+			skillPassiveDescription: `-`,
+			skillUltimateName: `-`,
+			skillUltimateDescription: `-`,
+			subName: `-`,
+			subDescription: `-`,
 		},
 		Celestia: {
 			Name: "Celestia",

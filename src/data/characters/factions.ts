@@ -21,7 +21,8 @@ export enum TheScissors {
 	Reiichi = "Reiichi",
 	Kanami = "Kanami",
 	Eika = "Eika",
-	Fragrans = "Fragrans"
+	Fragrans = "Fragrans",
+	Mara = "Mara"
 }
 
 export enum Urbino {

@@ -2,7 +2,7 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=38C2FF&width=435&lines=Map+Marking;Strategy+Discussing;Lineup+Learning)](https://git.io/typing-svg)
 
-![Static Badge](https://img.shields.io/badge/React.js-blue)  ![Static Badge](https://img.shields.io/badge/Typescript-blue)  ![Static Badge](https://img.shields.io/badge/License-GPL3.0-orange)
+![Static Badge](https://img.shields.io/badge/React.js-blue) ![Static Badge](https://img.shields.io/badge/Typescript-blue)![Static Badge](https://img.shields.io/badge/License-GPL3.0-orange)
 
 [**Strinova Map Assistant (fsltech.cn)**](https://strinova.fsltech.cn/)
 

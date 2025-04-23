@@ -1,46 +1,46 @@
-import { characterData } from "../characterRegistry";
-import { factions, PUS } from "../factions";
+import { characterData } from '../characterRegistry';
+import { factions, PUS } from '../factions';
 
 const character: characterData = {
-	faction: factions.PUS,
-	id: PUS.Michele,
-	defense: {
-		canvasImage: 'https://s2.loli.net/2024/09/29/29JH5SlaTdCwgFR.png',
-		bodyImage: 'https://cdn.sa.net/2025/04/22/2MLSe7fg8tsQ3br.png',
-		skills: {
-			active: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/8iCzWDaNQPSxqvw.png',
-				generateOnCanvas: active
-			},
-			passive: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/ANhKZ6GDzOIjPtf.png',
-				generateOnCanvas: passive
-			},
-			ultimate: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/UGeEvYfXiSgD4zr.png',
-				generateOnCanvas: ultimate
-			},
-			sub: {
-				skillIcon: 'https://cdn.sa.net/2024/11/19/fvrVnE8Ocl21Dpz.png',
-				generateOnCanvas: sub
-			}
-		}
-	}
-}
+  faction: factions.PUS,
+  id: PUS.Michele,
+  defense: {
+    canvasImage: 'https://s2.loli.net/2024/09/29/29JH5SlaTdCwgFR.png',
+    bodyImage: 'https://cdn.sa.net/2025/04/22/2MLSe7fg8tsQ3br.png',
+    skills: {
+      active: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/8iCzWDaNQPSxqvw.png',
+        generateOnCanvas: active,
+      },
+      passive: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/ANhKZ6GDzOIjPtf.png',
+        generateOnCanvas: passive,
+      },
+      ultimate: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/UGeEvYfXiSgD4zr.png',
+        generateOnCanvas: ultimate,
+      },
+      sub: {
+        skillIcon: 'https://cdn.sa.net/2024/11/19/fvrVnE8Ocl21Dpz.png',
+        generateOnCanvas: sub,
+      },
+    },
+  },
+};
 function active() {
-	return;
+  return;
 }
 
 function passive() {
-	return;
+  return;
 }
 
 function ultimate() {
-	return;
+  return;
 }
 
 function sub() {
-	return;
+  return;
 }
 
 export default character;

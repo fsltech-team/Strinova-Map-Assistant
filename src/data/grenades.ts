@@ -22,7 +22,7 @@ export const grenadeData: grenadeData[] = [
   },
   {
     grenade: grenades.SnowBall,
-    imageLink: 'https://s2.loli.net/2024/09/24/siyl1V9OETwdntX.png',
+    imageLink: 'https://cdn.sa.net/2025/04/23/EOqx1uVcloHNh3m.png',
   },
   {
     grenade: grenades.Alarm,

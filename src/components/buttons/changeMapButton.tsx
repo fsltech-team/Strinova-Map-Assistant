@@ -1,16 +1,18 @@
-import React from 'react'
-import { I18nData } from '../../types/interface'
-import { Button, Dropdown } from '@douyinfe/semi-ui'
-import { FaMap } from 'react-icons/fa'
-import { mapList, MapName } from '../../data/maplist'
-import Pikaso, { BaseShapes } from 'pikaso'
+import React from 'react';
+import { I18nData } from '../../types/interface';
+import { Button, Dropdown } from '@douyinfe/semi-ui';
+import { FaMap } from 'react-icons/fa';
+import { mapList, MapName } from '../../data/maplist';
+import Pikaso, { BaseShapes } from 'pikaso';
 
 interface ChangeMapButtonProps {
-  currentLanguage: I18nData
-  currentMap: MapName
-  setPresentMap: React.Dispatch<React.SetStateAction<MapName>>
-  setPresentMapURL: React.Dispatch<React.SetStateAction<{ imgPrepareLink: string; imgBlankLink: string }>>
-  editor: Pikaso<BaseShapes> | null
+  currentLanguage: I18nData;
+  currentMap: MapName;
+  setPresentMap: React.Dispatch<React.SetStateAction<MapName>>;
+  setPresentMapURL: React.Dispatch<
+    React.SetStateAction<{ imgPrepareLink: string; imgBlankLink: string }>
+  >;
+  editor: Pikaso<BaseShapes> | null;
 }
 
 const ChangeMapButton: React.FC<ChangeMapButtonProps> = ({
@@ -18,17 +20,20 @@ const ChangeMapButton: React.FC<ChangeMapButtonProps> = ({
   currentMap,
   setPresentMap,
   setPresentMapURL,
-  editor
+  editor,
 }) => {
   const changePresentmap = (value: string) => {
-    setPresentMap(MapName[value as keyof typeof MapName])
+    setPresentMap(MapName[value as keyof typeof MapName]);
     for (const mapinfo of mapList) {
       if (mapinfo.map === value) {
-        editor?.reset()
-        setPresentMapURL({ imgPrepareLink: mapinfo.imgPrepareLink, imgBlankLink: mapinfo.imgBlankLink })
+        editor?.reset();
+        setPresentMapURL({
+          imgPrepareLink: mapinfo.imgPrepareLink,
+          imgBlankLink: mapinfo.imgBlankLink,
+        });
       }
     }
-  }
+  };
 
   return (
     <div>
@@ -39,7 +44,9 @@ const ChangeMapButton: React.FC<ChangeMapButtonProps> = ({
         render={
           <Dropdown.Menu>
             {Object.keys(MapName).map((key: unknown) => (
-              <Dropdown.Item key={key as MapName} onClick={() => changePresentmap(key as MapName)}>
+              <Dropdown.Item
+                key={key as MapName}
+                onClick={() => changePresentmap(key as MapName)}>
                 {currentLanguage.mapsetting.maps[key as MapName]}
               </Dropdown.Item>
             ))}
@@ -50,7 +57,7 @@ const ChangeMapButton: React.FC<ChangeMapButtonProps> = ({
         </Button>
       </Dropdown>
     </div>
-  )
-}
+  );
+};
 
-export default ChangeMapButton
+export default ChangeMapButton;

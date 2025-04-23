@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
   /* 对于Firefox浏览器，隐藏滚动条 */
 }
 
-.no-select{
+.no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

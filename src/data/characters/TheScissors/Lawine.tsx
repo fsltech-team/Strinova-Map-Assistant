@@ -1,48 +1,47 @@
-import { characterData } from "../characterRegistry";
-import { factions, TheScissors } from "../factions";
-
+import { characterData } from '../characterRegistry';
+import { factions, TheScissors } from '../factions';
 
 const character: characterData = {
-	faction: factions.TheScissors,
-	id: TheScissors.Lawine,
-	attack: {
-		canvasImage: 'https://s2.loli.net/2024/09/29/DeK5afJoAhpyNcM.png',
-		bodyImage: 'https://cdn.sa.net/2025/04/22/f8dgSBZ2zsvV1jL.png',
-		skills: {
-			active: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/gOFlGIzPjxbpYKw.png',
-				generateOnCanvas: active
-			},
-			passive: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/8AxLszwVIg17WGq.png',
-				generateOnCanvas: passive
-			},
-			ultimate: {
-				skillIcon: 'https://s2.loli.net/2024/09/25/HuEnVYb8Mr5e24I.png',
-				generateOnCanvas: ultimate
-			},
-			sub: {
-				skillIcon: 'https://cdn.sa.net/2024/11/19/E5OzUcFg3DsjGuH.png',
-				generateOnCanvas: sub
-			}
-		}
-	}
-}
+  faction: factions.TheScissors,
+  id: TheScissors.Lawine,
+  attack: {
+    canvasImage: 'https://s2.loli.net/2024/09/29/DeK5afJoAhpyNcM.png',
+    bodyImage: 'https://cdn.sa.net/2025/04/22/f8dgSBZ2zsvV1jL.png',
+    skills: {
+      active: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/gOFlGIzPjxbpYKw.png',
+        generateOnCanvas: active,
+      },
+      passive: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/8AxLszwVIg17WGq.png',
+        generateOnCanvas: passive,
+      },
+      ultimate: {
+        skillIcon: 'https://s2.loli.net/2024/09/25/HuEnVYb8Mr5e24I.png',
+        generateOnCanvas: ultimate,
+      },
+      sub: {
+        skillIcon: 'https://cdn.sa.net/2024/11/19/E5OzUcFg3DsjGuH.png',
+        generateOnCanvas: sub,
+      },
+    },
+  },
+};
 
 function active() {
-	return;
+  return;
 }
 
 function passive() {
-	return;
+  return;
 }
 
 function ultimate() {
-	return;
+  return;
 }
 
 function sub() {
-	return;
+  return;
 }
 
 export default character;

@@ -1,28 +1,33 @@
-import { Button, Popover, Slider } from '@douyinfe/semi-ui'
-import React from 'react'
-import { MdCreate } from 'react-icons/md'
+import { Button, Popover, Slider } from '@douyinfe/semi-ui';
+import React from 'react';
+import { MdCreate } from 'react-icons/md';
 
 interface StandardButtonProps {
-  icon: typeof MdCreate
-  penWidth: number
-  setpenWidth: React.Dispatch<React.SetStateAction<number>>
-  penColor: string
-  isActiveTool: boolean
-  onClick: () => void
+  icon: typeof MdCreate;
+  penWidth: number;
+  setpenWidth: React.Dispatch<React.SetStateAction<number>>;
+  penColor: string;
+  isActiveTool: boolean;
+  onClick: () => void;
 }
 
 const toolTextPopoverButton: React.FC<StandardButtonProps> = (props) => {
   const markPlate = (
     <div
       className='grid grid-flex'
-      style={{ width: '300px', height: '70px', display: 'flex', justifyContent: 'space-around' }}>
+      style={{
+        width: '300px',
+        height: '70px',
+        display: 'flex',
+        justifyContent: 'space-around',
+      }}>
       <Slider
-        style={{ marginLeft: '8px', marginTop: "20px", width: '200px' }}
+        style={{ marginLeft: '8px', marginTop: '20px', width: '200px' }}
         min={1}
         max={5}
         defaultValue={props.penWidth}
         onChange={(value) => {
-          props.setpenWidth(value as number)
+          props.setpenWidth(value as number);
         }}></Slider>
       <div
         style={{
@@ -33,10 +38,12 @@ const toolTextPopoverButton: React.FC<StandardButtonProps> = (props) => {
           placeItems: 'center',
           placeContent: 'center',
           color: props.penColor,
-          overflow: 'hidden'
-        }}>A</div>
+          overflow: 'hidden',
+        }}>
+        A
+      </div>
     </div>
-  )
+  );
 
   return (
     <Popover content={markPlate} position={'left'}>
@@ -48,7 +55,7 @@ const toolTextPopoverButton: React.FC<StandardButtonProps> = (props) => {
         onClick={props.onClick}
       />
     </Popover>
-  )
-}
+  );
+};
 
-export default toolTextPopoverButton
+export default toolTextPopoverButton;

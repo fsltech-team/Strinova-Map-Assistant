@@ -28,7 +28,8 @@
     "appId": "org.strinova.map.assistant",
     "productName": "Strinova Map Assistant",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icon/icon.ico"
     },
     "mac": {
       "target": "dmg"

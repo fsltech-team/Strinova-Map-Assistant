@@ -42,11 +42,9 @@
     "singleQuote": true,
     "bracketSameLine": true,
     "endOfLine": "auto",
-    "trailingComma": "none",
-    "semi": false,
-    "jsxSingleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 2
+    "trailingComma": "all",
+    "semi": true,
+    "jsxSingleQuote": true
   },
   "volta": {
     "node": "22.14.0",

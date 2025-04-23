@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "Got it",
 		pin: {
-			title: "Milestone Release V1.0",
-			date: "2025.1.23",
-			summary: "Milestone release complete.You'll find our social media at the footer of the page.",
+			title: "Update",
+			date: "2025.4.23",
+			summary: "New Map & New Agent added.",
 			data: {}
 		},
 		history: []
@@ -78,18 +78,7 @@ export default {
 				url: "https://strinova.fsltech.cn/"
 			}
 		],
-		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
-		],
+		CN: [],
 	},
 	supportusdata: {
 		content: <>
@@ -287,14 +276,14 @@ export default {
 			subDescription: `subDescription`,
 		},
 		Leona: {
-			Name: "蕾欧娜",
-			Type: "守护",
-			skillActiveName: `弦能掩墙`,
-			skillActiveDescription: `蕾欧娜可以在指定平地或斜坡生成两种角度的正方形建筑块。方块生成会消耗技能点数及弦能条。方块最多同时存在16个。`,
-			skillPassiveName: `劳逸结合`,
-			skillPassiveDescription: `蕾欧娜在弦化状态会持续恢复弦能，当弦能高于50%时，提高自身移动速度；低于50%时，逐渐恢复自身护甲。`,
-			skillUltimateName: `纯净坚城`,
-			skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
+			Name: "Leona",
+			Type: "Sentinel",
+			skillActiveName: `KINETIC BARRIER`,
+			skillActiveDescription: `Leona generates square blocks with two-angle options on designated surfaces. Generating blocks consumes skill points and energy. Up to 16 blocks can exist at once.`,
+			skillPassiveName: `WORK-LIFE BALANCE`,
+			skillPassiveDescription: `While stringified, Leona continuously regenerates energy. When energy is above 50%, her movement speed increases; if below 50%, her armor gradually recovers.`,
+			skillUltimateName: `FORTRESS OF PURITY`,
+			skillUltimateDescription: `Leona fills her energy bar, making existing and newly generated blocks permanently transparent during the skill duration. Transparent blocks no longer block paths or ally bullets.`,
 			subName: `防弹护窗`,
 			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
@@ -385,12 +374,12 @@ export default {
 		Mara: {
 			Name: "Mara",
 			Type: "Duellist",
-			skillActiveName: `-`,
-			skillActiveDescription: `-`,
-			skillPassiveName: `-`,
-			skillPassiveDescription: `-`,
-			skillUltimateName: `-`,
-			skillUltimateDescription: `-`,
+			skillActiveName: `Phantom Grip`,
+			skillActiveDescription: `Mara casts a phantom hand that targets the nearest standing enemy, pulling a Soul Orb from their body and slowing them down. Only Mara can attack the Soul Orb with her weapon. Damaging the Soul Orb partially inflicts armor-ignoring HP damage on the enemy. The Soul Orb shrinks when the enemy sidesteps or glides.`,
+			skillPassiveName: `Soul Reaver`,
+			skillPassiveDescription: `Mara recovers a portion of HP and deals extra armor-ignoring DMG when using her weapon on non-full-HP enemies. This recovery effect also applies to the Soul Orb DMG from her Active Skill.`,
+			skillUltimateName: `Grim Reaper`,
+			skillUltimateDescription: `Mara marks the nearest enemy, applying silence and making them visible only to her. If Mara participates in a knockdown or kill of this target, the mark transfers to the nearest standing enemy within range and resets its duration. The effect lasts until Mara dies or time runs out.`,
 			subName: `-`,
 			subDescription: `-`,
 		},

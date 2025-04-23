@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "今日不再显示",
 		pin: {
-			title: "新增超弦体-雷欧娜",
-			date: "2025.1.23",
-			summary: "各位新年快乐！（虽然这么说是不是晚了点），这次更新添加了超弦体-雷欧娜。新的地图因为要不到文件所以暂时更新不了（恼）。直到现在才更新也是因为迟迟要不到想要的美术素材（悲）。大家都在忙，能理解（哀）。",
+			title: "更新",
+			date: "2025.4.23",
+			summary: "添加了新地图和玛拉",
 			data: {}
 		},
 		history: []
@@ -80,16 +80,16 @@ export default {
 			}
 		],
 		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
+			// {
+			// 	icon: <></>,
+			// 	content: "腾讯云CDN -  上海 - 1",
+			// 	url: "https://sh-1.strinova.fsltech.cn/"
+			// },
+			// {
+			// 	icon: <></>,
+			// 	content: "腾讯云CDN - 香港 - 1",
+			// 	url: "https://hk-1.strinova.fsltech.cn/"
+			// }
 		],
 	},
 	supportusdata: {

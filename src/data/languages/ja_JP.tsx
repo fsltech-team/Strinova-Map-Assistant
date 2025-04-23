@@ -8,11 +8,11 @@ export default {
 	friendlink: "Friend Link",
 	sitelist: "Switch Server",
 	announcementdata: {
-		notshowntoday: "今日不再显示",
+		notshowntoday: "Not show today",
 		pin: {
-			title: "正式版发布",
-			date: "2025.1.23",
-			summary: "网站正式版已上线，欢迎使用！有任何问题可以通过网页最下方联系我们。",
+			title: "Update",
+			date: "2025.4.23",
+			summary: "New Map & New Agent added.",
 			data: {}
 		},
 		history: []
@@ -79,18 +79,7 @@ export default {
 				url: "https://strinova.fsltech.cn/"
 			}
 		],
-		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
-		],
+		CN: [],
 	},
 	supportusdata: {
 		content: <>

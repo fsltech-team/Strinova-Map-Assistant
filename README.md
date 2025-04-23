@@ -13,7 +13,7 @@
 Our project is for :
 
 - Marking map for strategy
-- Line-up tutorial and shareing
+- Line-up tutorial and sharing
 - Bug point Avoiding
 - …
 
@@ -21,9 +21,20 @@ Our project is for :
 
 🚧 **Developing**
 
-We've just finished marking canvas and character icon draging .
+We've just finished marking canvas and character icon dragging .
 
 We're moving on the other components .
+
+## Requirements
+
+- [volta](https://volta.sh)
+  - This project is using [volta](https://volta.sh/) to manage the node version and package manager.
+
+## Getting Started
+
+1. [install volta](https://docs.volta.sh/guide/getting-started) (Skip if you have already installed it.)
+2. `npm ci`
+3. `npm run dev`
 
 ## How to contact us?
 

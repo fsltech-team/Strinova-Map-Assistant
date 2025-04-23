@@ -1,16 +1,59 @@
 {
-  "name": "electron",
-  "productName": "electron",
-  "description": "My Electron application description",
+  "name": "strinova-map-assistant-electron",
+  "productName": "strinova-map-assistant-electron",
+  "description": "The Electron version of Strinova Map Assistant",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": "acer",
+  "author": "fsltech",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "publish": "electron-builder -p always"
   },
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fsltech-team/Strinova-Map-Assistant.git"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
   "devDependencies": {
-    "electron": "31.2.1"
+    "electron": "^35.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "org.strinova.map.assistant",
+    "productName": "Strinova Map Assistant",
+    "win": {
+      "target": "nsis",
+      "icon": "icon/icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "directories": {
+      "buildResources": "build",
+      "output": "dist",
+      "app": "."
+    },
+    "extraResources": [
+      {
+        "from": "assets/",
+        "to": "assets/"
+      }
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "fsltech",
+        "repo": "Strinova-Map-Assistant"
+      }
+    ]
   }
 }

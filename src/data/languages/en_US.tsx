@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "Got it",
 		pin: {
-			title: "Milestone Release V1.0",
-			date: "2024.11.12",
-			summary: "Milestone release complete.You'll find our social media at the footer of the page.",
+			title: "Update",
+			date: "2025.4.23",
+			summary: "New Map & New Agent added.",
 			data: {}
 		},
 		history: []
@@ -78,18 +78,7 @@ export default {
 				url: "https://strinova.fsltech.cn/"
 			}
 		],
-		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
-		],
+		CN: [],
 	},
 	supportusdata: {
 		content: <>
@@ -113,6 +102,7 @@ export default {
 		character: 'Character',
 		skill: 'Skills',
 		grenade: 'Grenades',
+		other: 'Others',
 		lineup: 'Grenade Lineups',
 		skilllineup: 'Skill Lineups',
 		mobaisuperjump: 'Baimo Super Jumps',
@@ -136,7 +126,8 @@ export default {
 			CauchyDistrict: 'Cauchy District',
 			EulerPort: 'Port Euler',
 			Area88: 'Area 88',
-			Base404: 'Base 404'
+			Base404: 'Base 404',
+			Ocarnus: 'Ocarnus'
 		},
 		TeamHighlight: 'Team Highlight',
 		TeamHighlightOptions: {
@@ -189,7 +180,8 @@ export default {
 			Kokona: 'Kokona',
 			Yvette: 'Yvette',
 			Flavia: 'Flavia',
-			Yugiri: "Yugiri"
+			Yugiri: "Yugiri",
+			Leona: "Leona"
 		},
 		TheScissors: {
 			Ming: 'Ming',
@@ -198,7 +190,8 @@ export default {
 			Reiichi: 'Reiichi',
 			Kanami: 'Kanami',
 			Eika: 'Eika',
-			Fragrans: 'Fragrans'
+			Fragrans: 'Fragrans',
+			Mara: 'Mara'
 		},
 		Urbino: {
 			Celestia: 'Celestia',
@@ -281,6 +274,18 @@ export default {
 			skillUltimateDescription: `Summons a large wave of mist that slowly advances forwards, reducing the max shields of any enemy struck and also applying the Corrosion effect. `,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Leona: {
+			Name: "Leona",
+			Type: "Sentinel",
+			skillActiveName: `KINETIC BARRIER`,
+			skillActiveDescription: `Leona generates square blocks with two-angle options on designated surfaces. Generating blocks consumes skill points and energy. Up to 16 blocks can exist at once.`,
+			skillPassiveName: `WORK-LIFE BALANCE`,
+			skillPassiveDescription: `While stringified, Leona continuously regenerates energy. When energy is above 50%, her movement speed increases; if below 50%, her armor gradually recovers.`,
+			skillUltimateName: `FORTRESS OF PURITY`,
+			skillUltimateDescription: `Leona fills her energy bar, making existing and newly generated blocks permanently transparent during the skill duration. Transparent blocks no longer block paths or ally bullets.`,
+			subName: `防弹护窗`,
+			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Ming: {
 			Name: "Ming",
@@ -365,6 +370,18 @@ export default {
 			skillUltimateDescription: `Fragrans will create an area of intense fragrance centered on herself, and allies in the area will gain a high rate of fire, increased movement speed, and health regeneration, the effect will not be decayed, and Fragrans will not be able to use weapons during the release, but will receive a significant damage reduction.`,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Mara: {
+			Name: "Mara",
+			Type: "Duellist",
+			skillActiveName: `Phantom Grip`,
+			skillActiveDescription: `Mara casts a phantom hand that targets the nearest standing enemy, pulling a Soul Orb from their body and slowing them down. Only Mara can attack the Soul Orb with her weapon. Damaging the Soul Orb partially inflicts armor-ignoring HP damage on the enemy. The Soul Orb shrinks when the enemy sidesteps or glides.`,
+			skillPassiveName: `Soul Reaver`,
+			skillPassiveDescription: `Mara recovers a portion of HP and deals extra armor-ignoring DMG when using her weapon on non-full-HP enemies. This recovery effect also applies to the Soul Orb DMG from her Active Skill.`,
+			skillUltimateName: `Grim Reaper`,
+			skillUltimateDescription: `Mara marks the nearest enemy, applying silence and making them visible only to her. If Mara participates in a knockdown or kill of this target, the mark transfers to the nearest standing enemy within range and resets its duration. The effect lasts until Mara dies or time runs out.`,
+			subName: `-`,
+			subDescription: `-`,
 		},
 		Celestia: {
 			Name: "Celestia",
@@ -456,6 +473,16 @@ export default {
 		Alarm: 'Alarm',
 		WindstormGrenade: 'Windstorm Grenade',
 		SnowBall: 'Snow Ball'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: 'Mark',

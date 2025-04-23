@@ -8,11 +8,11 @@ export default {
 	friendlink: "Friend Link",
 	sitelist: "Switch Server",
 	announcementdata: {
-		notshowntoday: "今日不再显示",
+		notshowntoday: "Not show today",
 		pin: {
-			title: "正式版发布",
-			date: "2024.11.12",
-			summary: "网站正式版已上线，欢迎使用！有任何问题可以通过网页最下方联系我们。",
+			title: "Update",
+			date: "2025.4.23",
+			summary: "New Map & New Agent added.",
 			data: {}
 		},
 		history: []
@@ -79,18 +79,7 @@ export default {
 				url: "https://strinova.fsltech.cn/"
 			}
 		],
-		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
-		],
+		CN: [],
 	},
 	supportusdata: {
 		content: <>
@@ -114,6 +103,7 @@ export default {
 		character: 'キャラクター（超弦体）',
 		skill: 'スキル',
 		grenade: '戦術アイテム',
+		other: 'Others',
 		lineup: '戦術アイテムのポイント',
 		skilllineup: 'スキルポイント',
 		mobaisuperjump: '白墨スーパージャンプ',
@@ -137,7 +127,8 @@ export default {
 			CauchyDistrict: 'コーシー街区',
 			EulerPort: 'オイラー港',
 			Area88: '88街区',
-			Base404: '404基地'
+			Base404: '404基地',
+			Ocarnus: '奥卡努斯'
 		},
 		TeamHighlight: 'チームハイライト',
 		TeamHighlightOptions: {
@@ -190,7 +181,8 @@ export default {
 			Kokona: '心夏',
 			Yvette: 'イヴェット',
 			Flavia: 'フラヴィア',
-			Yugiri: "Yugiri"
+			Yugiri: "Yugiri",
+			Leona: "Leona"
 		},
 		TheScissors: {
 			Ming: 'ミン',
@@ -199,7 +191,8 @@ export default {
 			Reiichi: '令一',
 			Kanami: '香奈美',
 			Eika: 'アイカ',
-			Fragrans: 'フラグランス'
+			Fragrans: 'フラグランス',
+			Mara:'マーラー'
 		},
 		Urbino: {
 			Celestia: '星理恵',
@@ -282,6 +275,18 @@ export default {
 			skillUltimateDescription: `広範囲の毒霧を召喚してゆっくりと前進し、範囲内の敵キャラクターのアーマー上限を減少させる、腐食性の毒素を注入する`,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Leona: {
+			Name: "蕾欧娜",
+			Type: "守护",
+			skillActiveName: `弦能掩墙`,
+			skillActiveDescription: `蕾欧娜可以在指定平地或斜坡生成两种角度的正方形建筑块。方块生成会消耗技能点数及弦能条。方块最多同时存在16个。`,
+			skillPassiveName: `劳逸结合`,
+			skillPassiveDescription: `蕾欧娜在弦化状态会持续恢复弦能，当弦能高于50%时，提高自身移动速度；低于50%时，逐渐恢复自身护甲。`,
+			skillUltimateName: `纯净坚城`,
+			skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
+			subName: `防弹护窗`,
+			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Ming: {
 			Name: "明",
@@ -366,6 +371,18 @@ export default {
 			skillUltimateDescription: `フラグランスが自身を中心とした強力な香水エリアを生成し、エリア内の味方の射撃速度、移動速度を大幅に上昇させ、ヘルスを回復させる。効果時間中、フラグランスは弦化および武器の使用ができなくなる代わりに大幅なダメージ軽減効果を獲得する`,
 			subName: `subName`,
 			subDescription: `subDescription`,
+		},
+		Mara: {
+			Name: "Mara",
+			Type: "Duellist",
+			skillActiveName: `-`,
+			skillActiveDescription: `-`,
+			skillPassiveName: `-`,
+			skillPassiveDescription: `-`,
+			skillUltimateName: `-`,
+			skillUltimateDescription: `-`,
+			subName: `-`,
+			subDescription: `-`,
 		},
 		Celestia: {
 			Name: "星理恵",
@@ -457,6 +474,16 @@ export default {
 		Alarm: '警報器',
 		WindstormGrenade: '風雷ボム',
 		SnowBall: '雪玉'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: 'マーク',

@@ -1,9 +1,9 @@
 import { PUS, TheScissors, Urbino } from '../../../data/characters/factions.ts'
-import { CharacterSiderItem, GrenadeSiderItem } from './SiderItem.tsx'
+import { CharacterSiderItem, GrenadeSiderItem, OtherSiderItem } from './SiderItem.tsx'
 import React from 'react'
 import { Col, Row } from '@douyinfe/semi-ui'
 import { characterData, characterRegistry } from '../../../data/characters/characterRegistry.ts'
-import { grenadeData } from '../../../data/grenades.ts'
+import { grenadeData, otherData } from '../../../data/grenades.ts'
 
 interface SiderContentRowProps {
   data: characterData[]
@@ -48,6 +48,18 @@ export const GrenadeRow: React.FC = () => {
       {grenadeData.map((itemData, i) => (
         <Col key={i} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
           <GrenadeSiderItem data={itemData} />
+        </Col>
+      ))}
+    </Row>
+  )
+}
+
+export const OtherRow: React.FC = () => {
+  return (
+    <Row gutter={[16, 6]} style={{ width: '100%', margin: "0 auto" }}>
+      {otherData.map((itemData, i) => (
+        <Col key={i} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
+          <OtherSiderItem data={itemData} />
         </Col>
       ))}
     </Row>

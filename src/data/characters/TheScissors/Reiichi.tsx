@@ -7,7 +7,7 @@ const character: characterData = {
 	id: TheScissors.Reiichi,
 	attack: {
 		canvasImage: 'https://s2.loli.net/2024/09/29/txSOyYkT4pXhGBn.png',
-		bodyImage: 'https://s2.loli.net/2024/11/10/e6Zv5Mo9AWFyKJG.png',
+		bodyImage: 'https://cdn.sa.net/2025/04/22/Tu2C4q3OdFX6Ulk.png',
 		skills: {
 			active: {
 				skillIcon: 'https://s2.loli.net/2024/09/25/C6qts5xeVpS1N4E.png',

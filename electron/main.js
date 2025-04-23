@@ -1,16 +1,31 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
+const { autoUpdater } = require("electron-updater")
 
+const gotTheLock = app.requestSingleInstanceLock({ myKey: 'myValue' })
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (_event, _commandLine, _workingDirectory, _additionalData) => {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
+}
+
+let mainWindow
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1400,
-    height: 820,
+    height: 940,
     icon: 'https://strinova.fsltech.cn/favicon.ico' ? 'https://strinova.fsltech.cn/favicon.ico' : 'favicon.ico',
     title: "Strinova Map Assistant",
     frame: true,
     autoHideMenuBar: true,
+    devTools: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -21,7 +36,31 @@ function createWindow() {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+
+  autoUpdater.checkForUpdatesAndNotify()
 }
+
+autoUpdater.on('checking-for-update', () => {
+  console.log('Checking for update...')
+})
+autoUpdater.on('update-available', (info) => {
+  console.log('Update available.')
+})
+autoUpdater.on('update-not-available', (info) => {
+  console.log('Update not available.')
+})
+autoUpdater.on('error', (err) => {
+  console.log('Error in auto-updater. ' + err)
+})
+autoUpdater.on('download-progress', (progressObj) => {
+  let log_message = "Download speed: " + progressObj.bytesPerSecond
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%'
+  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')'
+  console.log(log_message)
+})
+autoUpdater.on('update-downloaded', (info) => {
+  console.log('Update downloaded')
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "今日不再显示",
 		pin: {
-			title: "正式版发布",
-			date: "2024.11.12",
-			summary: "网站正式版已上线，欢迎使用！有任何问题可以通过网页最下方联系我们。",
+			title: "更新",
+			date: "2025.4.23",
+			summary: "添加了新地图和玛拉",
 			data: {}
 		},
 		history: []
@@ -80,16 +80,16 @@ export default {
 			}
 		],
 		CN: [
-			{
-				icon: <></>,
-				content: "腾讯云CDN -  上海 - 1",
-				url: "https://sh-1.strinova.fsltech.cn/"
-			},
-			{
-				icon: <></>,
-				content: "腾讯云CDN - 香港 - 1",
-				url: "https://hk-1.strinova.fsltech.cn/"
-			}
+			// {
+			// 	icon: <></>,
+			// 	content: "腾讯云CDN -  上海 - 1",
+			// 	url: "https://sh-1.strinova.fsltech.cn/"
+			// },
+			// {
+			// 	icon: <></>,
+			// 	content: "腾讯云CDN - 香港 - 1",
+			// 	url: "https://hk-1.strinova.fsltech.cn/"
+			// }
 		],
 	},
 	supportusdata: {
@@ -114,6 +114,7 @@ export default {
 		character: '超弦体',
 		skill: '技能',
 		grenade: '战术道具',
+		other: '其他',
 		lineup: '战术道具点位',
 		skilllineup: '技能点位',
 		mobaisuperjump: '白墨超级跳点位',
@@ -137,7 +138,8 @@ export default {
 			EulerPort: '欧拉港口',
 			CauchyDistrict: '柯西街区',
 			Area88: '88区',
-			Base404: '404基地'
+			Base404: '404基地',
+			Ocarnus: '奥卡努斯'
 		},
 		TeamHighlight: '区分阵营',
 		TeamHighlightOptions: {
@@ -190,7 +192,8 @@ export default {
 			Kokona: '心夏',
 			Yvette: '伊薇特',
 			Flavia: '芙拉薇娅',
-			Yugiri: "忧雾"
+			Yugiri: "忧雾",
+			Leona: "雷欧娜"
 		},
 		TheScissors: {
 			Ming: '明',
@@ -199,7 +202,8 @@ export default {
 			Reiichi: '令',
 			Kanami: '香奈美',
 			Eika: '艾卡',
-			Fragrans: '珐格兰丝'
+			Fragrans: '珐格兰丝',
+			Mara:'玛拉'
 		},
 		Urbino: {
 			Celestia: '星绘',
@@ -282,6 +286,18 @@ export default {
 			skillUltimateDescription: `召唤大范围的毒雾向前方缓慢推进，腐蚀范围内敌方角色的护甲上限。`,
 			subName: `腐蚀溶液`,
 			subDescription: `忧雾向目标区域投掷毒液装置，毒液装置落地时会爆开并制造一片腐蚀区域，对区域内的敌人造成伤害与减速效果，弦化状态的敌人受到额外伤害。`,
+		},
+		Leona: {
+			Name: "蕾欧娜",
+			Type: "守护",
+			skillActiveName: `弦能掩墙`,
+			skillActiveDescription: `蕾欧娜可以在指定平地或斜坡生成两种角度的正方形建筑块。方块生成会消耗技能点数及弦能条。方块最多同时存在16个。`,
+			skillPassiveName: `劳逸结合`,
+			skillPassiveDescription: `蕾欧娜在弦化状态会持续恢复弦能，当弦能高于50%时，提高自身移动速度；低于50%时，逐渐恢复自身护甲。`,
+			skillUltimateName: `纯净坚城`,
+			skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
+			subName: `防弹护窗`,
+			subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Ming: {
 			Name: "明",
@@ -366,6 +382,18 @@ export default {
 			skillUltimateDescription: `珐格兰丝会以自己为中心制造强烈香氛区域，区域内友军会获得高额射速、移速提升和生命值恢复，该效果不会衰减且生命值恢复不会被伤害中断，释放期间珐格兰丝无法使用武器，但会获得大幅减伤。`,
 			subName: `香语众氛`,
 			subDescription: `珐格兰丝投掷出一瓶治疗香水，治疗香水触碰到障碍物时爆炸生效，制造一片回复生命区域，进入区域内的人会被赋予一段缓慢回复生命效果，即使离开区域也会持续一段时间。`,
+		},
+		Mara: {
+			Name: "玛拉",
+			Type: "决斗",
+			skillActiveName: `直击灵魂`,
+			skillActiveDescription: `向前施放鬼手，命中最近一名非倒地的敌方角色，使其灵魂出窍和减速。仅玛拉可通过武器攻击此灵魂球，对灵魂球造成伤害时，基于此一定比例给予敌人忽视护甲的血量伤害。敌人侧身或者飘飞时附着的灵魂球会缩小。`,
+			skillPassiveName: `摄魂侵魄`,
+			skillPassiveDescription: `玛拉使用武器对非满血敌方角色造成伤害时，会基于此伤害的一定比例恢复生命值以及对敌方角色造成额外忽视护甲的生命值伤害。此恢复效果同样适应于主动技能的灵魂球传导伤害。`,
+			skillUltimateName: `死神来了`,
+			skillUltimateDescription: `选择离自己最近的一名敌方角色施加死亡印记：该敌人会被沉默，及仅玛拉可视的暴露状态。在此期间当玛拉参与击倒或击杀此角色，此印记会传导给一定范围内离玛拉最近的非倒地敌人，并重新计时。此效果会持续到玛拉死亡或者时间结束。`,
+			subName: `亡灵漫步`,
+			subDescription: `开启后，玛拉弦化时会进入特殊隐身状态，当敌人逐渐靠近时玛拉才会显形；且弦化移速增加；在终极技能触发时，显形的最远距离会进一步缩小。`,
 		},
 		Celestia: {
 			Name: "星绘",
@@ -457,6 +485,16 @@ export default {
 		Alarm: '警报器',
 		WindstormGrenade: '风场雷',
 		SnowBall: '雪球'
+	},
+	others: {
+		Bomb: 'Bomb',
+		BombA: 'Bomb A',
+		BombB: 'Bomb B',
+		BombC: 'Bomb C',
+		Focus: 'Focus',
+		Warning: 'Warning',
+		Flag: 'Flag',
+		Danger: 'Danger',
 	},
 	markbox: {
 		mark: '画笔',

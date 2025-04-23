@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Divider, TabPane, Tabs } from '@douyinfe/semi-ui'
 import { GiBroadsword, GiShield, GiStunGrenade } from 'react-icons/gi'
 import { characterRegistry } from '../../../data/characters/characterRegistry.ts'
-import { GrenadeRow, PUSRow, TheScissorsRow, UrbinoRow } from './SiderContentRow.tsx'
+import { OtherRow, GrenadeRow, PUSRow, TheScissorsRow, UrbinoRow } from './SiderContentRow.tsx'
 import { LanguageContext } from '../../../contexts/LanguageContext.ts'
 
 interface SiderContentProps {
@@ -49,11 +49,13 @@ const SiderContent: React.FC<SiderContentProps> = ({ characterRegistry, collaps 
               tab={
                 <span>
                   <GiStunGrenade style={{ margin: "0 auto" }} />
-                  {currentLanguage.sidebar.grenade}
+                  {currentLanguage.sidebar.other}
                 </span>
               }
               itemKey='grenade'>
               <GrenadeRow />
+              <Divider dashed margin={'1rem'} />
+              <OtherRow />
             </TabPane>
           </Tabs>
           <Divider margin={'1rem'} />

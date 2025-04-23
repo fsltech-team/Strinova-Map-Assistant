@@ -162,9 +162,11 @@ export class Lobby {
     })
     connection.on("error", (err: any) => {
       console.log('connect error', connection.peer, err)
+      Toast.error('Connect error!')
     })
     connection.on("disconnected", (err: any) => {
       console.log('connect disconnected', connection.peer, err)
+      Toast.error('Connect disconnected!')
     })
   }
   disconnectConnection(connection: any) {

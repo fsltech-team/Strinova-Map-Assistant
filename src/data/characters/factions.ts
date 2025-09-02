@@ -12,6 +12,7 @@ export enum PUS {
   Flavia = 'Flavia',
   Yugiri = 'Yugiri',
   Leona = 'Leona',
+  Chiyo = 'Chiyo',
 }
 
 export enum TheScissors {

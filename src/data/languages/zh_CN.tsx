@@ -280,6 +280,7 @@ export default {
       Flavia: '芙拉薇娅',
       Yugiri: '忧雾',
       Leona: '雷欧娜',
+      Chiyo: '千代',
     },
     TheScissors: {
       Ming: '明',
@@ -384,6 +385,22 @@ export default {
       skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
       subName: `防弹护窗`,
       subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
+    },
+    Chiyo: {
+      Name: '千代',
+      Type: '决斗',
+      skillActiveName: '爆绽瞬华',
+      skillActiveDescription:
+        '射出一发可附着在建筑表面的爆炸箭，爆炸箭可以被提前引爆，或在到达最大存在时间后自行爆炸',
+      skillPassiveName: '静心凝势',
+      skillPassiveDescription:
+        '持续恢复专注度，进行攻击后会短暂减缓恢复速度;满专注值时，造成伤害后会消耗专注值并在一段时间内强化自身输出',
+      skillUltimateName: '枫烬崩天',
+      skillUltimateDescription:
+        '短暂透视队友附近的敌人，并且在蓄力后向目标方向发射可以穿透墙体的爆炸箭。箭矢在到达最大飞行距离或命中敌人后爆炸',
+      subName: '滞影贯云',
+      subDescription:
+        '蓄力后向目标方向发射一支狙击箭矢，根据命中部位造成高额伤害并造成迅速衰退的减速效果',
     },
     Ming: {
       Name: '明',

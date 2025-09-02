@@ -4,6 +4,9 @@ import { factions, PUS } from '../factions';
 const character: characterData = {
   faction: factions.PUS,
   id: PUS.Chiyo,
+  /**
+   * TODO: This image links are mock. Pls impl chiyo images.
+   */
   defense: {
     canvasImage: 'https://s2.loli.net/2024/09/29/jC98Rq3NhrUXYWK.png',
     bodyImage: 'https://cdn.sa.net/2025/04/22/ZcVRCBUJ8PGwn46.png',

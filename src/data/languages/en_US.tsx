@@ -272,6 +272,7 @@ export default {
       Flavia: 'Flavia',
       Yugiri: 'Yugiri',
       Leona: 'Leona',
+      Chiyo: 'Chiyo',
     },
     TheScissors: {
       Ming: 'Ming',
@@ -376,6 +377,22 @@ export default {
       skillUltimateDescription: `Leona fills her energy bar, making existing and newly generated blocks permanently transparent during the skill duration. Transparent blocks no longer block paths or ally bullets.`,
       subName: `防弹护窗`,
       subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
+    },
+    Chiyo: {
+      Name: 'Chiyo',
+      Type: 'Duelist',
+      skillActiveName: 'Burst of Brilliance',
+      skillActiveDescription:
+        'Fire an explosive arrow that sticks to surfaces, which can be detonated early or auto-detonates when its duration ends.',
+      skillPassiveName: 'Steady Resolve',
+      skillPassiveDescription:
+        'Steadily regain Focus, with recovery slowing briefly after attacks. When full, Focus is consumed to boost DMG briefly.',
+      skillUltimateName: 'Skyshatter',
+      skillUltimateDescription:
+        'Temporarily reveal enemies near allies and fire a charged wall-piercing explosive arrow at the target. The arrow explodes upon reaching max range or hitting an enemy.',
+      subName: 'Cloudpiercer',
+      subDescription:
+        'Charge and fire an arrow at the target, dealing high DMG and a rapidly fading slow effect based on the impact point.',
     },
     Ming: {
       Name: 'Ming',

@@ -267,11 +267,12 @@ export default {
       Kokona: '心夏',
       Yvette: 'イヴェット',
       Flavia: 'フラヴィア',
-      Yugiri: 'Yugiri',
-      Leona: 'Leona',
+      Yugiri: '夕霧',
+      Leona: 'レオナ',
+      Chiyo: '千代',
     },
     TheScissors: {
-      Ming: 'ミン',
+      Ming: '明',
       Lawine: 'ラヴィーネ',
       Meredith: 'メレディス',
       Reiichi: '令一',
@@ -373,6 +374,22 @@ export default {
       skillUltimateDescription: `蕾欧娜充满弦能条，场上已存在方块和技能持续期间生成的方块永久变透明，透明方块将不再阻挡通路与友方子弹。`,
       subName: `防弹护窗`,
       subDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
+    },
+    Chiyo: {
+      Name: '千代',
+      Type: 'デュエリスト',
+      skillActiveName: '刹那の華',
+      skillActiveDescription:
+        '建物の表面に付着する爆発矢を放つ。矢は任意のタイミングで起爆でき、最大持続時間に達すると自動的に爆発する',
+      skillPassiveName: '明鏡止水',
+      skillPassiveDescription:
+        '時間経過で集中力を回復し、攻撃すると一時的に回復速度が低下する。集中力が最大のとき、攻撃で集中力を消費し、一定時間自身の火力が強化される',
+      skillUltimateName: '紅焔・崩天',
+      skillUltimateDescription:
+        '味方の近くにいる敵を透視し、チャージ後に壁を貫通する爆発矢を発射する。矢はチャージ時間に応じた距離を飛んで停止し、着弾地点で短時間の遅延の後に爆発して周囲に大ダメージを与える',
+      subName: '雲貫の矢',
+      subDescription:
+        'チャージ後、貫通矢を目標方向へ放ち、軌道上の敵に高ダメージとスロウ効果を与える',
     },
     Ming: {
       Name: '明',

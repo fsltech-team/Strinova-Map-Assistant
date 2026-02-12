@@ -36,7 +36,7 @@
     "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.21"
   },
   "prettier": {
     "singleQuote": true,

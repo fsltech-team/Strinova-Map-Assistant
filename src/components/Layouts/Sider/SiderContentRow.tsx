@@ -1,113 +1,98 @@
-import { PUS, TheScissors, Urbino } from '../../../data/characters/factions.ts';
-import {
-  CharacterSiderItem,
-  GrenadeSiderItem,
-  OtherSiderItem,
-} from './SiderItem.tsx';
-import React from 'react';
-import { Col, Row } from '@douyinfe/semi-ui';
-import {
-  characterData,
-  characterRegistry,
-} from '../../../data/characters/characterRegistry.ts';
-import { grenadeData, otherData } from '../../../data/grenades.ts';
+import { PUS, TheScissors, Urbino } from '../../../data/characters/factions.ts'
+import { CharacterSiderItem, GrenadeSiderItem, OtherSiderItem } from './SiderItem.tsx'
+import React from 'react'
+import { Col, Row } from '@douyinfe/semi-ui'
+import { characterData, characterRegistry } from '../../../data/characters/characterRegistry.ts'
+import { grenadeData, otherData } from '../../../data/grenades.ts'
+import { areaEffectsData } from '../../../data/areaEffects.ts'
+import { AreaEffectSiderItem } from './SiderItem.tsx'
+import { Input } from '@douyinfe/semi-ui'
+import { IconSearch } from '@douyinfe/semi-icons'
 
 interface SiderContentRowProps {
-  data: characterData[];
-  side: 'attack' | 'defense';
+  data: characterData[]
+  side: "attack" | "defense"
 }
 
 const SiderContentRow: React.FC<SiderContentRowProps> = ({ data, side }) => {
   return (
-    <Row gutter={[16, 6]} style={{ width: '100%', margin: '0 auto' }}>
+    <Row gutter={[16, 6]} style={{ width: '100%', margin: "0 auto" }}>
       {data.map((itemData, i) => (
-        <Col
-          key={i}
-          span={6}
-          style={{
-            display: 'flex',
-            placeItems: 'center',
-            placeContent: 'center',
-          }}>
+        <Col key={i} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
           <CharacterSiderItem data={itemData} side={side} />
         </Col>
       ))}
     </Row>
-  );
-};
+  )
+}
 
 interface RowProps {
   characterRegistry: characterRegistry;
 }
 
 interface ExtendedRowProps extends RowProps {
-  side: 'attack' | 'defense';
+  side: "attack" | "defense";
 }
 
 export const TheScissorsRow: React.FC<RowProps> = ({ characterRegistry }) => {
-  return (
-    <SiderContentRow
-      data={Object.values(TheScissors).map((k: string) => characterRegistry[k])}
-      side='attack'
-    />
-  );
-};
+  return <SiderContentRow data={Object.values(TheScissors).map((k: string) => characterRegistry[k])} side="attack" />
+}
 
-export const UrbinoRow: React.FC<ExtendedRowProps> = ({
-  characterRegistry,
-  side,
-}) => {
-  return (
-    <SiderContentRow
-      data={Object.values(Urbino).map((k: string) => characterRegistry[k])}
-      side={side}
-    />
-  );
-};
+export const UrbinoRow: React.FC<ExtendedRowProps> = ({ characterRegistry, side }) => {
+  return <SiderContentRow data={Object.values(Urbino).map((k: string) => characterRegistry[k])} side={side} />
+}
 
 export const PUSRow: React.FC<RowProps> = ({ characterRegistry }) => {
-  return (
-    <SiderContentRow
-      data={Object.values(PUS).map((k: string) => characterRegistry[k])}
-      side='defense'
-    />
-  );
-};
+  return <SiderContentRow data={Object.values(PUS).map((k: string) => characterRegistry[k])} side="defense" />
+}
 
 export const GrenadeRow: React.FC = () => {
   return (
-    <Row gutter={[16, 6]} style={{ width: '100%', margin: '0 auto' }}>
+    <Row gutter={[16, 6]} style={{ width: '100%', margin: "0 auto" }}>
       {grenadeData.map((itemData, i) => (
-        <Col
-          key={i}
-          span={6}
-          style={{
-            display: 'flex',
-            placeItems: 'center',
-            placeContent: 'center',
-          }}>
+        <Col key={i} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
           <GrenadeSiderItem data={itemData} />
         </Col>
       ))}
     </Row>
-  );
-};
+  )
+}
 
 export const OtherRow: React.FC = () => {
   return (
-    <Row gutter={[16, 6]} style={{ width: '100%', margin: '0 auto' }}>
+    <Row gutter={[16, 6]} style={{ width: '100%', margin: "0 auto" }}>
       {otherData.map((itemData, i) => (
-        <Col
-          key={i}
-          span={6}
-          style={{
-            display: 'flex',
-            placeItems: 'center',
-            placeContent: 'center',
-          }}>
+        <Col key={i} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
           <OtherSiderItem data={itemData} />
         </Col>
       ))}
     </Row>
-  );
-};
+  )
+}
+
+export const AreaEffectRow: React.FC = () => {
+  const [searchText, setSearchText] = React.useState('')
+
+  const filteredData = areaEffectsData.filter(item => 
+    item.name.toLowerCase().includes(searchText.toLowerCase())
+  )
+
+  return (
+    <div style={{ padding: '0' }}>
+      <Input 
+        prefix={<IconSearch />}
+        placeholder="Rechercher..." 
+        value={searchText}
+        onChange={(v) => setSearchText(v)}
+        style={{ marginBottom: '10px' }}
+      />
+      <Row gutter={[16, 6]} style={{ width: '100%', margin: "0 auto" }}>
+        {filteredData.map((itemData) => (
+          <Col key={itemData.id} span={6} style={{ display: 'flex', placeItems: 'center', placeContent: 'center' }}>
+            <AreaEffectSiderItem data={itemData} />
+          </Col>
+        ))}
+      </Row>
+    </div>
+  )
+}

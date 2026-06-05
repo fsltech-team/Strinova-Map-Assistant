@@ -1,35 +1,33 @@
-import { characterData } from '../characterRegistry';
-import { factions, PUS } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, PUS } from "../factions";
+
 
 const character: characterData = {
   faction: factions.PUS,
   id: PUS.Chiyo,
-  /**
-   * TODO: This image links are mock. Pls impl chiyo images.
-   */
   defense: {
-    canvasImage: '/src/assets/image/character/Chiyo/icon.png',
-    bodyImage: '/src/assets/image/character/Chiyo/body.png',
+    canvasImage: import.meta.env.BASE_URL + 'images/remote/chiyo_icone.png',
+    bodyImage: import.meta.env.BASE_URL + 'images/remote/chiyo.png',
     skills: {
       active: {
-        skillIcon: '/src/assets/image/character/Chiyo/active.png',
-        generateOnCanvas: active,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/activeskill_chiyo.png',
+        generateOnCanvas: active
       },
       passive: {
-        skillIcon: '/src/assets/image/character/Chiyo/passive.png',
-        generateOnCanvas: passive,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/passiveskill_chiyo.png',
+        generateOnCanvas: passive
+      },
+      tactical: {
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/tacticalskill_chiyo.png',
+        generateOnCanvas: tactical
       },
       ultimate: {
-        skillIcon: '/src/assets/image/character/Chiyo/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Chiyo/sub.png', 
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/ultimate_chiyo.png',
+        generateOnCanvas: ultimate
+      }
+    }
+  }
+}
 
 function active() {
   return;
@@ -43,7 +41,7 @@ function ultimate() {
   return;
 }
 
-function sub() {
+function tactical() {
   return;
 }
 

@@ -1,46 +1,46 @@
-import { characterData } from '../characterRegistry';
-import { factions, PUS } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, PUS } from "../factions";
 
 const character: characterData = {
-  faction: factions.PUS,
-  id: PUS.Michele,
-  defense: {
-    canvasImage: '/src/assets/image/character/Michele/icon.png',
-    bodyImage: '/src/assets/image/character/Michele/body.png',
-    skills: {
-      active: {
-        skillIcon: '/src/assets/image/character/Michele/active.png',
-        generateOnCanvas: active,
-      },
-      passive: {
-        skillIcon: '/src/assets/image/character/Michele/passive.png',
-        generateOnCanvas: passive,
-      },
-      ultimate: {
-        skillIcon: '/src/assets/image/character/Michele/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Michele/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+	faction: factions.PUS,
+	id: PUS.Michele,
+	defense: {
+		canvasImage: import.meta.env.BASE_URL + 'images/remote/72af1d33_29JH5SlaTdCwgFR.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/remote/c4014084_2MLSe7fg8tsQ3br.png',
+		skills: {
+			active: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/721cbee2_8iCzWDaNQPSxqvw.png',
+				generateOnCanvas: active
+			},
+			passive: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/e0b6aedf_ANhKZ6GDzOIjPtf.png',
+				generateOnCanvas: passive
+			},
+			tactical: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/421def9e_fvrVnE8Ocl21Dpz.png',
+				generateOnCanvas: tactical
+			},
+			ultimate: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/23cfae05_UGeEvYfXiSgD4zr.png',
+				generateOnCanvas: ultimate
+			}
+		}
+	}
+}
 function active() {
-  return;
+	return;
 }
 
 function passive() {
-  return;
+	return;
 }
 
 function ultimate() {
-  return;
+	return;
 }
 
-function sub() {
-  return;
+function tactical() {
+	return;
 }
 
 export default character;

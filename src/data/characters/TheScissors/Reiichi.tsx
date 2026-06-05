@@ -1,47 +1,48 @@
-import { characterData } from '../characterRegistry';
-import { factions, TheScissors } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, TheScissors } from "../factions";
+
 
 const character: characterData = {
-  faction: factions.TheScissors,
-  id: TheScissors.Reiichi,
-  attack: {
-    canvasImage: '/src/assets/image/character/Reiichi/icon.png',
-    bodyImage: '/src/assets/image/character/Reiichi/body.png',
-    skills: {
-      active: {
-        skillIcon: '/src/assets/image/character/Reiichi/active.png',
-        generateOnCanvas: active,
-      },
-      passive: {
-        skillIcon: '/src/assets/image/character/Reiichi/passive.png',
-        generateOnCanvas: passive,
-      },
-      ultimate: {
-        skillIcon: '/src/assets/image/character/Reiichi/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Reiichi/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+	faction: factions.TheScissors,
+	id: TheScissors.Reiichi,
+	attack: {
+		canvasImage: import.meta.env.BASE_URL + 'images/remote/3788ee06_txSOyYkT4pXhGBn.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/remote/0954400a_Tu2C4q3OdFX6Ulk.png',
+		skills: {
+			active: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/70040a4d_C6qts5xeVpS1N4E.png',
+				generateOnCanvas: active
+			},
+			passive: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/bb0edf84_iuSvZDYnFTzmBrl.png',
+				generateOnCanvas: passive
+			},
+			tactical: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/0f8129a0_daOIybnpUr8QtVz.png',
+				generateOnCanvas: tactical
+			},
+			ultimate: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/0a8b8c21_bESOlDh9oURvFC3.png',
+				generateOnCanvas: ultimate
+			}
+		}
+	}
+}
 
 function active() {
-  return;
+	return;
 }
 
 function passive() {
-  return;
+	return;
 }
 
 function ultimate() {
-  return;
+	return;
 }
 
-function sub() {
-  return;
+function tactical() {
+	return;
 }
 
 export default character;

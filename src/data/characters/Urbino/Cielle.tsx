@@ -1,57 +1,58 @@
-import { characterData } from '../characterRegistry';
-import { factions, Urbino } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, Urbino } from "../factions";
+
 
 const character: characterData = {
   faction: factions.Urbino,
-  id: Urbino.Cielle,  
+  id: Urbino.Cielle,
   attack: {
-    canvasImage: '/src/assets/image/character/Cielle/a_icon.png',
-    bodyImage: '/src/assets/image/character/Cielle/body.png',
+    canvasImage: import.meta.env.BASE_URL + 'images/remote/cielle_icone_red.png',
+    bodyImage: import.meta.env.BASE_URL + 'images/remote/cielle.png',
     skills: {
       active: {
-        skillIcon: '/src/assets/image/character/Cielle/active.png',
-        generateOnCanvas: active,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/activeskill_cielle.png',
+        generateOnCanvas: active
       },
       passive: {
-        skillIcon: '/src/assets/image/character/Cielle/passive.png',
-        generateOnCanvas: passive,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/passiveskill_cielle.png',
+        generateOnCanvas: passive
+      },
+      tactical: {
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/tacticalskill_cielle.png',
+        generateOnCanvas: tactical
       },
       ultimate: {
-        skillIcon: '/src/assets/image/character/Cielle/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Cielle/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/ultimate_cielle.png',
+        generateOnCanvas: ultimate
+      }
+    }
   },
   defense: {
-    canvasImage: '/src/assets/image/character/Cielle/d_icon.png',
-    bodyImage: '/src/assets/image/character/Cielle/body.png',
+    canvasImage: import.meta.env.BASE_URL + 'images/remote/cielle_icone.png',
+    bodyImage: import.meta.env.BASE_URL + 'images/remote/cielle.png',
     skills: {
       active: {
-        skillIcon: '/src/assets/image/character/Cielle/active.png',
-        generateOnCanvas: active,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/activeskill_cielle.png',
+        generateOnCanvas: active
       },
       passive: {
-        skillIcon: '/src/assets/image/character/Cielle/passive.png',
-        generateOnCanvas: passive,
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/passiveskill_cielle.png',
+        generateOnCanvas: passive
+      },
+      tactical: {
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/tacticalskill_cielle.png',
+        generateOnCanvas: tactical
       },
       ultimate: {
-        skillIcon: '/src/assets/image/character/Cielle/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Cielle/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
+        skillIcon: import.meta.env.BASE_URL + 'images/remote/ultimate_cielle.png',
+        generateOnCanvas: ultimate
+      }
+    }
   },
-};
+}
 
 function active() {
-  return;
+  return;	
 }
 
 function passive() {
@@ -62,7 +63,7 @@ function ultimate() {
   return;
 }
 
-function sub() {
+function tactical() {
   return;
 }
 

@@ -1,47 +1,48 @@
-import { characterData } from '../characterRegistry';
-import { factions, TheScissors } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, TheScissors } from "../factions";
+
 
 const character: characterData = {
-  faction: factions.TheScissors,
-  id: TheScissors.Eika,
-  attack: {
-    canvasImage: '/src/assets/image/character/Eika/icon.png',
-    bodyImage: '/src/assets/image/character/Eika/body.png',
-    skills: {
-      active: {
-        skillIcon: '/src/assets/image/character/Eika/active.png',
-        generateOnCanvas: active,
-      },
-      passive: {
-        skillIcon: '/src/assets/image/character/Eika/passive.png',
-        generateOnCanvas: passive,
-      },
-      ultimate: {
-        skillIcon: '/src/assets/image/character/Eika/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Eika/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+	faction: factions.TheScissors,
+	id: TheScissors.Eika,
+	attack: {
+		canvasImage: import.meta.env.BASE_URL + 'images/remote/a89bcd32_SrnDsxX5bAiBNcE.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/remote/3e3ce001_SMVIPh4fqWzRruy.png',
+		skills: {
+			active: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/6a86b439_SPYXJZwHGObnrmV.png',
+				generateOnCanvas: active
+			},
+			passive: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/a5c351a1_JYfa5PdE6r4Kcio.png',
+				generateOnCanvas: passive
+			},
+			ultimate: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/f519087c_sFgyUNK7iWtcvfp.png',
+				generateOnCanvas: ultimate
+			},
+			tactical: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/ab52e6c0_to7dWPDVuUFRsIn.png',
+				generateOnCanvas: tactical
+			}
+		}
+	}
+}
 
 function active() {
-  return;
+	return;
 }
 
 function passive() {
-  return;
+	return;
 }
 
 function ultimate() {
-  return;
+	return;
 }
 
-function sub() {
-  return;
+function tactical() {
+	return;
 }
 
 export default character;

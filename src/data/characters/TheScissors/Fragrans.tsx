@@ -1,47 +1,48 @@
-import { characterData } from '../characterRegistry';
-import { factions, TheScissors } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, TheScissors } from "../factions";
+
 
 const character: characterData = {
-  faction: factions.TheScissors,
-  id: TheScissors.Fragrans,
-  attack: {
-    canvasImage: '/src/assets/image/character/Fragrans/icon.png',
-    bodyImage: '/src/assets/image/character/Fragrans/body.png',
-    skills: {
-      active: {
-        skillIcon: '/src/assets/image/character/Fragrans/active.png',
-        generateOnCanvas: active,
-      },
-      passive: {
-        skillIcon: '/src/assets/image/character/Fragrans/passive.png',
-        generateOnCanvas: passive,
-      },
-      ultimate: {
-        skillIcon: '/src/assets/image/character/Fragrans/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Fragrans/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+	faction: factions.TheScissors,
+	id: TheScissors.Fragrans,
+	attack: {
+		canvasImage: import.meta.env.BASE_URL + 'images/remote/fa72cb3c_AM58XCKyixJlTGO.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/remote/598755c0_6cwHibDP9QmfuVC.png',
+		skills: {
+			active: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/ddc13f1f_L9j3uWBrl5hNyzx.png',
+				generateOnCanvas: active
+			},
+			passive: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/d07d8431_B3HDdTpLjAyYQ74.png',
+				generateOnCanvas: passive
+			},
+			tactical: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/8f282e0d_JrTleR2xkfPysaA.png',
+				generateOnCanvas: tactical
+			},
+			ultimate: {
+				skillIcon: import.meta.env.BASE_URL + 'images/remote/639cf6c5_5Xk9PUOlwFsgE6B.png',
+				generateOnCanvas: ultimate
+			}
+		}
+	}
+}
 
 function active() {
-  return;
+	return;
 }
 
 function passive() {
-  return;
+	return;
 }
 
 function ultimate() {
-  return;
+	return;
 }
 
-function sub() {
-  return;
+function tactical() {
+	return;
 }
 
 export default character;

@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "electron": "^35.2.0",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.7.0"
   },
   "build": {
     "appId": "org.strinova.map.assistant",

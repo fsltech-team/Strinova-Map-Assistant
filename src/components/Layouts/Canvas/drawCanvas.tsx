@@ -1,20 +1,36 @@
-import React, { useLayoutEffect } from 'react';
-import { DrawType, Pikaso, type BaseShapes } from 'pikaso';
-import { mapTools } from '../../../utils/canvasConstants';
-import { getDragValue, setDragValue } from '../../../data/dragAndDrop.ts';
+import React, { useLayoutEffect, useRef, useCallback, useState } from 'react'
+import { DrawType, Pikaso, type BaseShapes } from 'pikaso'
+import { mapTools } from '../../../utils/canvasConstants'
+import { getDragValue, setDragValue } from '../../../data/dragAndDrop.ts'
+
+// Converts a hex color (#rrggbb or #rgb) to rgba with the given opacity
+const hexToRgba = (hex: string, alpha: number): string => {
+  const sanitized = hex.replace('#', '')
+  const full = sanitized.length === 3
+    ? sanitized.split('').map(c => c + c).join('')
+    : sanitized
+  const r = parseInt(full.substring(0, 2), 16)
+  const g = parseInt(full.substring(2, 4), 16)
+  const b = parseInt(full.substring(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
 
 interface PikasoMapProps {
-  pikasoRef: React.RefObject<HTMLDivElement>;
-  pikasoEditor: Pikaso<BaseShapes> | null;
-  currentMap: string;
-  penColor: string;
-  canvasTool: mapTools;
-  setTool: React.Dispatch<React.SetStateAction<mapTools>>;
-  penWidth: number;
-  lineWidth: number;
-  fontSize: number;
-  panelcollaps: boolean;
-  load: React.Dispatch<React.SetStateAction<void>>;
+  pikasoRef: React.RefObject<HTMLDivElement>
+  pikasoEditor: Pikaso<BaseShapes> | null
+  currentMap: string
+  penColor: string
+  canvasTool: mapTools
+  setTool: React.Dispatch<React.SetStateAction<mapTools>>
+  penWidth: number
+  lineWidth: number
+  fontSize: number
+  panelcollaps: boolean
+  load: React.Dispatch<React.SetStateAction<void>>
+  style?: React.CSSProperties
+  onAddItem: (item: any) => void
+  canvasTransform: { x: number, y: number, scale: number }
+  meterScale: number
 }
 
 const DrawMap: React.FC<PikasoMapProps> = ({
@@ -29,49 +45,72 @@ const DrawMap: React.FC<PikasoMapProps> = ({
   fontSize,
   panelcollaps,
   load,
+  style,
+  onAddItem,
+  canvasTransform,
+  meterScale
 }) => {
-  let rescaleTO: any;
-  const rescaleEditor = (timeout: number = 0) => {
-    clearTimeout(rescaleTO);
-    rescaleTO = setTimeout(() => {
+
+
+  const rescaleTO = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const rescaleEditor = useCallback((timeout: number = 0) => {
+    if (rescaleTO.current !== null) clearTimeout(rescaleTO.current)
+    rescaleTO.current = setTimeout(() => {
       requestAnimationFrame(() => {
-        if (!pikasoEditor) return;
-        const scaleSize = 1000;
-        pikasoEditor?.board.stage.setSize({
-          width: scaleSize,
-          height: scaleSize,
-        });
-        pikasoEditor?.board.rescale();
-      });
-    }, timeout);
-  };
+        if (!pikasoEditor) return
+        const size = 1000 * canvasTransform.scale
+        pikasoEditor.board.stage.setSize({
+          width: size,
+          height: size
+        })
+        pikasoEditor.board.rescale()
+      })
+    }, timeout)
+  }, [pikasoEditor, canvasTransform.scale])
 
   useLayoutEffect(() => {
     switch (canvasTool) {
       case DrawType.Arrow:
         pikasoEditor?.shapes.arrow.draw({
           stroke: penColor,
-          strokeWidth: lineWidth,
-        });
-        break;
+          strokeWidth: lineWidth
+        })
+        break
       case DrawType.Line:
         pikasoEditor?.shapes.line.draw({
           stroke: penColor,
-          strokeWidth: lineWidth,
-        });
-        break;
+          strokeWidth: lineWidth
+        })
+        break
       case DrawType.Pencil:
         pikasoEditor?.shapes.pencil.draw({
           stroke: penColor,
-          strokeWidth: penWidth,
-        });
-        break;
+          strokeWidth: penWidth
+        })
+        break
+      case DrawType.Circle:
+        pikasoEditor?.shapes.circle.draw({
+          stroke: penColor,
+          strokeWidth: lineWidth,
+          fill: hexToRgba(penColor, 0.3)
+        })
+        break
+      case DrawType.Rect:
+        pikasoEditor?.shapes.rect.draw({
+          stroke: penColor,
+          strokeWidth: lineWidth,
+          fill: hexToRgba(penColor, 0.3)
+        })
+        break
       case 'SELECT':
-        pikasoEditor?.shapes.pencil.stopDrawing();
-        break;
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        break
       case 'TEXT':
-        pikasoEditor?.shapes.pencil.stopDrawing();
-        break;
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        break
+      case 'RULER':
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        break
     }
   }, [
     currentMap,
@@ -86,141 +125,195 @@ const DrawMap: React.FC<PikasoMapProps> = ({
     pikasoEditor?.shapes.line,
     pikasoEditor?.shapes.pencil,
     pikasoEditor?.shapes.arrow,
-  ]);
+    pikasoEditor?.shapes.circle,
+    pikasoEditor?.shapes.rect,
+  ])
 
   useLayoutEffect(() => {
-    rescaleEditor();
-    window.addEventListener('resize', () => rescaleEditor());
+    const handleResize = () => rescaleEditor()
+    rescaleEditor()
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', () => rescaleEditor());
-    };
-  }, [currentMap, pikasoEditor?.board.background]);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [rescaleEditor, currentMap, pikasoEditor?.board.background])
 
   useLayoutEffect(() => {
-    rescaleEditor(100);
-  }, [panelcollaps]);
+    rescaleEditor(100)
+  }, [rescaleEditor, panelcollaps])
 
-  const handleCanvasMouseDown = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
+  const handleCanvasMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     switch (canvasTool) {
       case DrawType.Line:
-        pikasoEditor?.shapes.line.stopDrawing();
+        pikasoEditor?.shapes.line.stopDrawing()
         pikasoEditor?.shapes.line.draw({
           stroke: penColor,
-          strokeWidth: lineWidth,
-        });
-        break;
+          strokeWidth: lineWidth
+        })
+        break
       case DrawType.Arrow:
-        pikasoEditor?.shapes.arrow.stopDrawing();
+        pikasoEditor?.shapes.arrow.stopDrawing()
         pikasoEditor?.shapes.arrow.draw({
           stroke: penColor,
-          strokeWidth: lineWidth,
-        });
-        break;
+          strokeWidth: lineWidth
+        })
+        break
       case DrawType.Pencil:
-        pikasoEditor?.shapes.pencil.stopDrawing();
+        pikasoEditor?.shapes.pencil.stopDrawing()
         pikasoEditor?.shapes.pencil.draw({
           stroke: penColor,
-          strokeWidth: penWidth,
-        });
-        break;
+          strokeWidth: penWidth
+        })
+        break
+      case DrawType.Circle:
+        pikasoEditor?.shapes.circle.stopDrawing()
+        pikasoEditor?.shapes.circle.draw({
+          stroke: penColor,
+          strokeWidth: lineWidth,
+          fill: hexToRgba(penColor, 0.3)
+        })
+        break
+      case DrawType.Rect:
+        pikasoEditor?.shapes.rect.stopDrawing()
+        pikasoEditor?.shapes.rect.draw({
+          stroke: penColor,
+          strokeWidth: lineWidth,
+          fill: hexToRgba(penColor, 0.3)
+        })
+        break
       case 'SELECT':
-        pikasoEditor?.shapes.pencil.stopDrawing();
-        break;
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        break
       case 'TEXT':
-        pikasoEditor?.shapes.pencil.stopDrawing();
-        const rect = (e.target as HTMLCanvasElement)?.getBoundingClientRect();
-        const pikasoSize = pikasoEditor?.board.stage.getSize();
-        const scale = {
-          x: pikasoSize!.width / rect!.width,
-          y: pikasoSize!.height / rect!.height,
-        };
-        const diff = { x: e.clientX - rect!.left, y: e.clientY - rect!.top };
-        const textPos = { x: diff.x * scale.x, y: diff.y * scale.y };
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
+        const diff = { x: e.clientX - rect!.left, y: e.clientY - rect!.top }
+        
+        const scale = Math.min(rect.width / 1000, rect.height / 1000)
+        const offsetX = (rect.width - 1000 * scale) / 2
+        const offsetY = (rect.height - 1000 * scale) / 2
+        
+        const textPos = { 
+          x: (diff.x - offsetX) / scale, 
+          y: (diff.y - offsetY) / scale 
+        }
 
-        const label = pikasoEditor?.shapes.label.insert({
-          container: {
-            x: textPos.x,
-            y: textPos.y,
-          },
-          text: {
-            text: 'Type here',
-            fill: penColor,
-            fontSize: fontSize * 16,
-          },
-        });
-        label?.select();
-        setTool('SELECT');
-        break;
+        onAddItem({
+          type: 'text',
+          value: 'Type here',
+          x: textPos.x,
+          y: textPos.y,
+          color: penColor,
+          fontSize: fontSize * 16
+        })
+        setTool('SELECT')
+        break
+      case 'RULER':
+        pikasoEditor?.shapes.pencil.stopDrawing()
+        break
     }
-  };
+  }
 
-  const handleOnDrop = (e: React.DragEvent<HTMLDivElement> | any) => {
-    const dragValue = getDragValue();
-    const imgLink = dragValue?.type == 'imageLink' ? dragValue.value : null;
-    if (imgLink) {
-      const img = new Image();
-      img.src = imgLink;
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+  }
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+  }
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+  }
+
+  const handleOnDrop = (e: React.DragEvent<HTMLDivElement>| any) => {
+    const clientPos = e.clientX ? e : e.changedTouches[0]
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    const diff = { x: clientPos.clientX - rect.left, y: clientPos.clientY - rect.top }
+
+    const dragValue = getDragValue()
+    const imgLink = dragValue?.type == 'imageLink' ? dragValue.value : null
+    if(imgLink) {
+      const img = new Image()
+      img.src = imgLink
       img.onload = () => {
-        const size = 35;
-        const ratio = img.width / img.height;
+        const size = 35
+        const ratio = img.width / img.height
 
-        const clientPos = e.clientX ? e : e.changedTouches[0];
-        const rect = (e.target as HTMLCanvasElement)?.getBoundingClientRect();
-        const pikasoSize = pikasoEditor?.board.stage.getSize();
-        const scale = {
-          x: pikasoSize!.width / rect!.width,
-          y: pikasoSize!.height / rect!.height,
-        };
-        const diff = {
-          x: clientPos.clientX - rect!.left,
-          y: clientPos.clientY - rect!.top,
-        };
-        const imgPos = { x: diff.x * scale.x, y: diff.y * scale.y };
-
-        pikasoEditor?.shapes.image.insert(imgLink, {
-          x: imgPos.x - size / 2,
-          y: imgPos.y - size / 2,
+        const scale = Math.min(rect.width / 1000, rect.height / 1000)
+        const offsetX = (rect.width - 1000 * scale) / 2
+        const offsetY = (rect.height - 1000 * scale) / 2
+        
+        const imgPos = { 
+          x: (diff.x - offsetX) / scale, 
+          y: (diff.y - offsetY) / scale 
+        }
+  
+        onAddItem({
+          type: 'image',
+          value: imgLink,
+          x: imgPos.x,
+          y: imgPos.y,
           width: size * ratio,
-          height: size,
-        });
-      };
-    } else if (
-      e.dataTransfer &&
-      e.dataTransfer.files[0]?.type == 'application/json'
-    ) {
+          height: size
+        })
+      }
+    } else if (dragValue?.type === 'areaEffect') {
+      const effectData = dragValue.data
+      const scale = Math.min(rect.width / 1000, rect.height / 1000)
+      const offsetX = (rect.width - 1000 * scale) / 2
+      const offsetY = (rect.height - 1000 * scale) / 2
+      
+      const pos = { 
+        x: (diff.x - offsetX) / scale, 
+        y: (diff.y - offsetY) / scale 
+      }
+      
+      // Calculate size in 1000x1000 space
+      const sizeInMeters = effectData.shape === 'circle' ? effectData.radius * 2 : effectData.width
+      const heightInMeters = effectData.shape === 'circle' ? effectData.radius * 2 : effectData.height
+      const itemWidth = sizeInMeters * meterScale
+      const itemHeight = heightInMeters * meterScale
+
+      onAddItem({
+        type: 'areaEffect',
+        value: effectData.id,
+        name: effectData.name,
+        color: effectData.color,
+        shape: effectData.shape,
+        x: pos.x,
+        y: pos.y,
+        width: itemWidth,
+        height: itemHeight
+      })
+    } else if(e.dataTransfer && e.dataTransfer.files[0]?.type == 'application/json') {
       let reader = new FileReader();
-      reader.onload = function (re) {
+      reader.onload = function(re) {
         const json = JSON.parse(re.target!.result as string);
-        load(json);
+        load(json)
       };
       reader.readAsText(e.dataTransfer.files[0]);
-      e.preventDefault();
+      e.preventDefault()
     }
-    setDragValue(null);
-  };
+    setDragValue(null)
+  }
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   return (
     <div
-      ref={pikasoRef}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-      }}
+      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', touchAction: 'none', ...style }}
       className='drawCanvas'
       onDrop={handleOnDrop}
       onTouchEnd={handleOnDrop}
       onDragOver={handleDragOver}
-      onClick={handleCanvasMouseDown}></div>
-  );
-};
+      onClick={handleCanvasMouseDown}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}>
+      <div ref={pikasoRef} style={{ width: '100%', height: '100%' }}></div>
 
-export default DrawMap;
+    </div>
+  )
+}
+
+export default DrawMap

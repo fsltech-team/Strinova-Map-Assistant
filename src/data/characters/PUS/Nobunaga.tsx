@@ -1,47 +1,47 @@
-import { characterData } from '../characterRegistry';
-import { factions, PUS } from '../factions';
+import { characterData } from "../characterRegistry";
+import { factions, PUS } from "../factions";
 
 const character: characterData = {
-  faction: factions.PUS,
-  id: PUS.Nobunaga,
-  defense: {
-    canvasImage: '/src/assets/image/character/Nobunaga/icon.png',
-    bodyImage: '/src/assets/image/character/Nobunaga/body.png',
-    skills: {
-      active: {
-        skillIcon: '/src/assets/image/character/Nobunaga/active.png',
-        generateOnCanvas: active,
-      },
-      passive: {
-        skillIcon: '/src/assets/image/character/Nobunaga/passive.png',
-        generateOnCanvas: passive,
-      },
-      ultimate: {
-        skillIcon: '/src/assets/image/character/Nobunaga/ultimate.png',
-        generateOnCanvas: ultimate,
-      },
-      sub: {
-        skillIcon: '/src/assets/image/character/Nobunaga/sub.png',
-        generateOnCanvas: sub,
-      },
-    },
-  },
-};
+		faction: factions.PUS,
+		id: PUS.Nobunaga,
+		defense: {
+			canvasImage: import.meta.env.BASE_URL + 'images/remote/7d4208d9_7UuX5VTR8AYWD2o.png',
+			bodyImage: import.meta.env.BASE_URL + 'images/remote/2e63f1ea_nvuOWPyjXK3Fif9.png',
+			skills: {
+				active: {
+					skillIcon: import.meta.env.BASE_URL + 'images/remote/e8762604_VJFzGhSyXmsiHpO.png',
+					generateOnCanvas: active
+				},
+				passive: {
+					skillIcon: import.meta.env.BASE_URL + 'images/remote/0acc8676_AHsc9o8W25UlpNa.png',
+					generateOnCanvas: passive
+				},
+				tactical: {
+					skillIcon: import.meta.env.BASE_URL + 'images/remote/62a963ca_MTjuAvcKSq6RNiU.png',
+					generateOnCanvas: tactical
+				},
+				ultimate: {
+					skillIcon: import.meta.env.BASE_URL + 'images/remote/ae864240_Vr78sb9T32ADMuy.png',
+					generateOnCanvas: ultimate
+				}
+			}
+		}
+}
 
 function active() {
-  return;
+	return;
 }
 
 function passive() {
-  return;
+	return;
 }
 
 function ultimate() {
-  return;
+	return;
 }
 
-function sub() {
-  return;
+function tactical() {
+	return;
 }
 
 export default character;

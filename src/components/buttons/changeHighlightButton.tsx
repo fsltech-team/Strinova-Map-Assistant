@@ -1,17 +1,13 @@
-import { Button } from '@douyinfe/semi-ui';
-import React from 'react';
+import { Button } from '@douyinfe/semi-ui'
+import React from 'react'
 
 interface ChangeHighlightButtonProps {
-  content: string;
-  mapPrepareMode: boolean;
-  setMapPrepareMode: React.Dispatch<React.SetStateAction<boolean>>;
+  content: string
+  mapPrepareMode: boolean
+  setMapPrepareMode: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const ChangeHighlightButton: React.FC<ChangeHighlightButtonProps> = ({
-  mapPrepareMode,
-  setMapPrepareMode,
-  content,
-}) => {
+const ChangeHighlightButton: React.FC<ChangeHighlightButtonProps> = ({ mapPrepareMode, setMapPrepareMode, content }) => {
   return (
     <Button
       theme={mapPrepareMode ? 'solid' : 'outline'}
@@ -19,7 +15,7 @@ const ChangeHighlightButton: React.FC<ChangeHighlightButtonProps> = ({
       onClick={() => setMapPrepareMode(!mapPrepareMode)}>
       {content}
     </Button>
-  );
-};
+  )
+}
 
-export default ChangeHighlightButton;
+export default ChangeHighlightButton

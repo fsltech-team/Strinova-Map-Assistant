@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "今日不再显示",
 		pin: {
-			title: "Update",
-			date: "2026.3.25",
-			summary: "Bug fixes, French language added",
+			title: "欸，竟然更新了？",
+			date: "2026.6.5",
+			summary: "在海外老哥的帮助下完成了更新，新增了放大镜功能进行局部放大",
 			data: {}
 		},
 		history: []
@@ -149,7 +149,7 @@ export default {
 			Area88: '88区',
 			Base404: '404基地',
 			Ocarnus: '奥卡努斯',
-			LebrunCity: 'Lebrun City'
+			LebrunCity: '莱布伦城'
 		},
 		TeamHighlight: '区分阵营',
 		TeamHighlightOptions: {
@@ -204,7 +204,7 @@ export default {
 			Flavia: '芙拉薇娅',
 			Yugiri: "忧雾",
 			Leona: "蕾欧娜",
-			Chiyo: "Chiyo"
+			Chiyo: "千代"
 		},
 		TheScissors: {
 			Ming: '明',
@@ -223,7 +223,7 @@ export default {
 			Fuchsia: '玛德蕾娜',
 			BaiMo: '绯莎',
 			Galatea: '加拉蒂亚',
-			Cielle: 'Cielle'
+			Cielle: '汐'
 		}
 	},
 	characterInfo: {
@@ -312,16 +312,16 @@ export default {
 			skillTacticalDescription: `蕾欧娜在已放置的方块表面横或纵向放置单向防弹玻璃。玻璃不可阻挡行进或技能，仅阻挡敌方子弹。玻璃生成会消耗技能点数及弦能条。防弹玻璃最多同时存在3个。`,
 		},
 		Chiyo: {
-			Name: "Chiyo",
-			Type: "Duellist",
-			skillActiveName: `Brilliant Blast`,
-			skillActiveDescription: `Chiyo fires an explosive arrow that adheres to surfaces and can be triggered prematurely, or explodes automatically at the end of its duration.`,
-			skillPassiveName: `Constant Will`,
-			skillPassiveDescription: `Chiyo benefits from a gradual recovery of focus, which briefly slows down after attacks. Once full, focus is consumed to increase DMG for a short time.`,
-			skillTacticalName: `Cloud Piercer`,
-			skillTacticalDescription: `Chiyo charges and fires an arrow at the target, dealing high DMG and a slow effect that quickly fades based on the point of impact.`,
-			skillUltimateName: `Sky Breaker`,
-			skillUltimateDescription: `Chiyo temporarily reveals nearby enemies to your allies and fires a piercing, charged explosive arrow at the target. The arrow explodes when it reaches its maximum range or hits an enemy.`,
+			Name: "千代",
+			Type: "决斗",
+			skillActiveName: `爆绽瞬华`,
+			skillActiveDescription: `射出一发可附着在建筑表面的爆炸箭，爆炸箭可以被提前引爆，或在到达最大存在时间后自行爆炸。`,
+			skillPassiveName: `静心凝势`,
+			skillPassiveDescription: `持续恢复专注度，进行攻击后会短暂减缓恢复速度;满专注值时，造成伤害后会消耗专注值并在一段时间内强化自身输出。`,
+			skillTacticalName: `滞影贯云`,
+			skillTacticalDescription: `蓄力后向目标方向发射一支狙击箭矢，根据命中部位造成高额伤害并造成迅速衰退的减速效果。`,
+			skillUltimateName: `枫烬崩天`,
+			skillUltimateDescription: `短暂透视队友附近的敌人，并且在蓄力后向目标方向发射可以穿透墙体的爆炸箭。箭矢在到达最大飞行距离或命中敌人后爆炸。`,
 		},
 		Ming: {
 			Name: "明",
@@ -492,16 +492,16 @@ export default {
 			skillTacticalDescription: `加拉蒂亚可以释放一个特殊的卡片分身，加拉蒂亚无法传送到该分身的位置，该分身被敌人摧毁时，会对周围所有敌人造成闪光效果。`,
 		},
 		Cielle: {
-			Name: "Cielle",
-			Type: "Duellist",
-			skillActiveName: `Mobile Shield`,
-			skillActiveDescription: `Cielle deploys an energy shield to block DMG. Cielle can charge forward as long as the shield is active. Her armor is restored when the shield takes DMG. It gradually repairs itself after deactivation. Sniper rifles deal extra DMG to it.`,
-			skillPassiveName: `Automatic Chamber`,
-			skillPassiveDescription: `After briefly holstering your weapon, it reloads automatically. When Cielle holsters her weapon after a shield charge or manual detonation, she recovers HP.`,
-			skillTacticalName: `Gravitational Link`,
-			skillTacticalDescription: `Cielle fires a destructible gravity orb that pulls enemies to its center, deals DMG on landing, and deals extra DMG to enemy summons.`,
-			skillUltimateName: `Absolute Defense`,
-			skillUltimateDescription: `Cielle improves and regenerates the energy shield, increasing its PV, reducing charge cooldown, and strengthening its effects.`,
+			Name: "汐",
+			Type: "决斗",
+			skillActiveName: `机动护盾`,
+			skillActiveDescription: `生成可阻挡伤害的能量盾，持盾期间可进行冲撞，护盾受到伤害时会恢复汐的护甲，收起时护盾会逐渐自我修复。狙击枪会对护盾造成额外伤害。`,
+			skillPassiveName: `自驱机匣`,
+			skillPassiveDescription: `武器在收起一段时间后会自动装填弹药，冲撞或主动引爆护盾后的极短时间内可以快速切出武器。`,
+			skillTacticalName: `引力聚缚`,
+			skillTacticalDescription: `丢出引力球，落地后将敌方向中心吸引并造成伤害，对敌方召唤物造成额外伤害，引力球可以被摧毁。`,
+			skillUltimateName: `绝对守护`,
+			skillUltimateDescription: `强化并重置能量盾，增加护盾生命值并降低冲撞冷却，增幅冲撞效果。`,
 		},
 	},
 	characterTypes: {

@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.TheScissors,
 	id: TheScissors.Lawine,
 	attack: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/2c0a3294_DeK5afJoAhpyNcM.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/2b9823d2_f8dgSBZ2zsvV1jL.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Lawine/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Lawine/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/7defb0bc_gOFlGIzPjxbpYKw.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Lawine/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/070302fd_8AxLszwVIg17WGq.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Lawine/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/a82368fe_E5OzUcFg3DsjGuH.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Lawine/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/a83d2571_HuEnVYb8Mr5e24I.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Lawine/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

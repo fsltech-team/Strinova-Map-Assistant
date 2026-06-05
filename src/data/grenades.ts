@@ -20,43 +20,43 @@ export interface grenadeData {
 export const grenadeData: grenadeData[] = [
 	{
 		grenade: grenades.SmokeBomb,
-		imageLink: import.meta.env.BASE_URL + "images/remote/03acfeef_4HUeCu6j3KdzfFy.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/smokeBomb.png"
 	},
 	{
 		grenade: grenades.SnowBall,
-		imageLink: import.meta.env.BASE_URL + "images/remote/d24e8c6d_siyl1V9OETwdntX.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/snowBall.png"
 	},
 	{
 		grenade: grenades.Alarm,
-		imageLink: import.meta.env.BASE_URL + "images/remote/a3423b14_w3ufEYUP89tlJq4.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/alarm.png"
 	},
 	{
 		grenade: grenades.SlowGrenade,
-		imageLink: import.meta.env.BASE_URL + "images/remote/c562332e_t42oXRpBiEDYFWq.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/slowGrenade.png"
 	},
 	{
 		grenade: grenades.HealingGrenade,
-		imageLink: import.meta.env.BASE_URL + "images/remote/aa32b9cf_X2MtclAev6NERfa.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/healingGrenade.png"
 	},
 	{
 		grenade: grenades.FragGrenade,
-		imageLink: import.meta.env.BASE_URL + "images/remote/3adda4fd_dFuTREQAbfCGY9p.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/fragGrenade.png"
 	},
 	{
 		grenade: grenades.Flashbang,
-		imageLink: import.meta.env.BASE_URL + "images/remote/19db55de_JTyFboHSYk7Dd94.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/flashbang.png"
 	},
 	{
 		grenade: grenades.WindstormGrenade,
-		imageLink: import.meta.env.BASE_URL + "images/remote/9b57f587_xPqkuA3wTUyGStV.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/windstormGrenade.png"
 	},
 	{
 		grenade: grenades.Interceptor,
-		imageLink: import.meta.env.BASE_URL + "images/remote/b26be4a1_b8jqTHJZxtEPgy5.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/interceptor.png"
 	},
 	{
 		grenade: grenades.ShieldBarrier,
-		imageLink: import.meta.env.BASE_URL + "images/remote/shield_barrier.png"
+		imageLink: import.meta.env.BASE_URL + "images/grenade/shieldBarrier.png"
 	}
 ]
 
@@ -82,34 +82,34 @@ export interface otherData {
 export const otherData: otherData[] = [
 	{
 		other: others.Bomb,
-		imageLink: import.meta.env.BASE_URL + "images/remote/4e9a687a_lvcYUqwA7rMsfEu.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/bomb.png"
 	},
 	{
 		other: others.BombA,
-		imageLink: import.meta.env.BASE_URL + "images/remote/e55067e3_1jothFAux6P95Ve.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/bombA.png"
 	},
 	{
 		other: others.BombB,
-		imageLink: import.meta.env.BASE_URL + "images/remote/4f7c7cc1_TvUCl3QqiFyKj2r.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/bombB.png"
 	},
 	{
 		other: others.BombC,
-		imageLink: import.meta.env.BASE_URL + "images/remote/018cdf30_6NUMSbevIiap534.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/bombC.png"
 	},
 	{
 		other: others.Focus,
-		imageLink: import.meta.env.BASE_URL + "images/remote/b82fb571_SeVw3s7OgrbyaCz.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/focus.png"
 	},
 	{
 		other: others.Warning,
-		imageLink: import.meta.env.BASE_URL + "images/remote/8bbd4a69_7Ev1A5tIfQgiJLl.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/warning.png"
 	},
 	{
 		other: others.Flag,
-		imageLink: import.meta.env.BASE_URL + "images/remote/e6d167ee_Yr62e537ER4Musv.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/flag.png"
 	},
 	{
 		other: others.Danger,
-		imageLink: import.meta.env.BASE_URL + "images/remote/0503a2e4_M1RvciEu7AwTpnt.png"
+		imageLink: import.meta.env.BASE_URL + "images/pin/danger.png"
 	},
 ]

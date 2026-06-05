@@ -36,6 +36,11 @@ interface SiderToolsProps {
   load: React.Dispatch<React.SetStateAction<void>>
   magnifierVisible: boolean
   setMagnifierVisible: (visible: boolean) => void
+  onUndo: () => void
+  onRedo: () => void
+  onReset: () => void
+  selectedOverlayItemId: string | null
+  deleteSelectedOverlayItem: () => void
 }
 
 const SiderTools: React.FC<SiderToolsProps> = ({
@@ -58,11 +63,18 @@ const SiderTools: React.FC<SiderToolsProps> = ({
   load,
   magnifierVisible,
   setMagnifierVisible,
+  onUndo,
+  onRedo,
+  onReset,
+  selectedOverlayItemId,
+  deleteSelectedOverlayItem,
 }) => {
   const [togglevisible, setToggleVisible] = React.useState(false)
   const [selection, setSelection] = React.useState(false)
 
   const currentLanguage = useContext(LanguageContext)
+
+  const hasAnySelection = selection || selectedOverlayItemId !== null
 
   editor?.on('selection:change', (selection) => {
     if (selection.shapes!.length > 0) {
@@ -194,8 +206,8 @@ const SiderTools: React.FC<SiderToolsProps> = ({
           <ToolColorButton color={penColor} onClick={() => undefined} text={penColor} />
         </div>
       </ColorPopover>
-      <ToolNormalButton Icon={MdUndo} isActiveTool={false} onClick={() => editor?.undo()} />
-      <ToolNormalButton Icon={MdRedo} isActiveTool={false} onClick={() => editor?.redo()} />
+      <ToolNormalButton Icon={MdUndo} isActiveTool={false} onClick={onUndo} />
+      <ToolNormalButton Icon={MdRedo} isActiveTool={false} onClick={onRedo} />
       <Popconfirm
         visible={togglevisible}
         title={currentLanguage.markbox.clearwarning.title}
@@ -203,7 +215,7 @@ const SiderTools: React.FC<SiderToolsProps> = ({
         okText={currentLanguage.markbox.clearwarning.ok}
         cancelText={currentLanguage.markbox.clearwarning.cancel}
         onConfirm={() => {
-          editor?.reset()
+          onReset()
           setToggleVisible(!togglevisible)
           Toast.success(currentLanguage.markbox.clearwarning.success)
         }}
@@ -212,12 +224,14 @@ const SiderTools: React.FC<SiderToolsProps> = ({
         }}
         position='left'>
         <ToolNormalButton
-          Icon={selection ? MdDelete : MdDeleteForever}
-          typeOverride={selection ? 'secondary' : 'danger'}
+          Icon={hasAnySelection ? MdDelete : MdDeleteForever}
+          typeOverride={hasAnySelection ? 'secondary' : 'danger'}
           isActiveTool={false}
           onClick={() => {
             if (selection) {
               editor?.selection.delete()
+            } else if (selectedOverlayItemId) {
+              deleteSelectedOverlayItem()
             } else {
               setToggleVisible(!togglevisible)
             }

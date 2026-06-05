@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.PUS,
 	id: PUS.Leona,
 	defense: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/7994385d_WY9ijCwS7e4OPNM.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/91422b07_snfMAvm1384Qc5h.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Leona/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Leona/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/0b05116b_8bA3kca54WlQi96.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Leona/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/f2bfc901_A45ZR1MXwovaijc.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Leona/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/0b6bd9eb_so6fhJX7Lp1YAPN.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Leona/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/b30ab458_snt2Q9EovlWj7Nx.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Leona/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

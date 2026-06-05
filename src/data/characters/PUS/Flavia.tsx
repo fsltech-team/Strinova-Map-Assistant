@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.PUS,
 	id: PUS.Flavia,
 	defense: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/1f571ffb_jC98Rq3NhrUXYWK.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/4e5a6c41_ZcVRCBUJ8PGwn46.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Flavia/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Flavia/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/a9b5293e_58dg6OpPntlviqW.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Flavia/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/eb8bf55a_u5tV9xaNyjUL6EM.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Flavia/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/da2d140a_lYbBufA6raXvQ1n.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Flavia/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/daea7250_ezsVQS62bY5iBcG.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Flavia/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

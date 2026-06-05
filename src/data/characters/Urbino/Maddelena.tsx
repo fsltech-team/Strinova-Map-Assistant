@@ -6,45 +6,45 @@ const character: characterData = {
 	faction: factions.Urbino,
 	id: Urbino.Maddelena,
 	attack: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/d4869c13_OGgXKe6pPERflQL.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/991384ba_3djgpfyBbxWzUAD.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Maddelena/a_icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Maddelena/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/6e2d18e3_2r7wkizoLbpqMOZ.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/114d7f43_q61FltINbyrA8YV.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/91b62917_yerm1tuq97ZnaWp.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/7e607042_tazvXEJNs5HuyeD.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}	
 	},
 	defense: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/1f86757b_dxqSrs3ivIJlF5h.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/991384ba_3djgpfyBbxWzUAD.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Maddelena/d_icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Maddelena/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/6e2d18e3_2r7wkizoLbpqMOZ.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/114d7f43_q61FltINbyrA8YV.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/91b62917_yerm1tuq97ZnaWp.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/7e607042_tazvXEJNs5HuyeD.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Maddelena/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

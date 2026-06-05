@@ -1,5 +1,5 @@
 
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useReducer, useCallback, useRef, useEffect } from 'react';
 import { i18nData } from '../data/i18n';
 import { Layout, LocaleProvider } from '@douyinfe/semi-ui';
 import { characterRegistry } from '../data/characters/characterRegistry';
@@ -44,6 +44,88 @@ export interface CanvasItem {
 	height?: number
 	rotation?: number
 	shape?: 'circle' | 'rect'
+}
+
+interface CanvasItemsState {
+	past: CanvasItem[][]
+	present: CanvasItem[]
+	future: CanvasItem[][]
+}
+
+type CanvasItemsAction =
+	| { type: 'ADD'; item: CanvasItem }
+	| { type: 'UPDATE'; id: string; updates: Partial<CanvasItem> }
+	| { type: 'DELETE'; id: string }
+	| { type: 'SET'; items: CanvasItem[] }
+	| { type: 'UNDO' }
+	| { type: 'REDO' }
+	| { type: 'RESET' }
+
+const MAX_HISTORY = 50
+
+const canvasItemsReducer = (state: CanvasItemsState, action: CanvasItemsAction): CanvasItemsState => {
+	switch (action.type) {
+		case 'ADD': {
+			const newPresent = [...state.present, action.item]
+			return {
+				past: [...state.past, state.present].slice(-MAX_HISTORY),
+				present: newPresent,
+				future: []
+			}
+		}
+		case 'UPDATE': {
+			const newPresent = state.present.map(item =>
+				item.id === action.id ? { ...item, ...action.updates } : item
+			)
+			return {
+				past: [...state.past, state.present].slice(-MAX_HISTORY),
+				present: newPresent,
+				future: []
+			}
+		}
+		case 'DELETE': {
+			const newPresent = state.present.filter(item => item.id !== action.id)
+			return {
+				past: [...state.past, state.present].slice(-MAX_HISTORY),
+				present: newPresent,
+				future: []
+			}
+		}
+		case 'SET': {
+			return {
+				past: [...state.past, state.present].slice(-MAX_HISTORY),
+				present: action.items,
+				future: []
+			}
+		}
+		case 'UNDO': {
+			if (state.past.length === 0) return state
+			const previous = state.past[state.past.length - 1]
+			const newPast = state.past.slice(0, -1)
+			return {
+				past: newPast,
+				present: previous,
+				future: [state.present, ...state.future]
+			}
+		}
+		case 'REDO': {
+			if (state.future.length === 0) return state
+			const next = state.future[0]
+			const newFuture = state.future.slice(1)
+			return {
+				past: [...state.past, state.present],
+				present: next,
+				future: newFuture
+			}
+		}
+		case 'RESET': {
+			return {
+				past: [...state.past, state.present].slice(-MAX_HISTORY),
+				present: [],
+				future: []
+			}
+		}
+	}
 }
 
 const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
@@ -98,7 +180,34 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 	const [fontSize, setFontSize] = useState(2)
 
 	const [mapPrepareMode, setMapPrepareMode] = useState(true)
-	const [canvasItems, setCanvasItems] = useState<CanvasItem[]>([])
+	const [canvasItemsState, dispatchCanvasItems] = useReducer(canvasItemsReducer, {
+		past: [],
+		present: [],
+		future: []
+	})
+	const canvasItems = canvasItemsState.present
+	const [selectedOverlayItemId, setSelectedOverlayItemId] = useState<string | null>(null)
+
+	// Unified action log: records which canvas was modified, in chronological order
+	const actionLogRef = useRef<Array<'pikaso' | 'overlay'>>([])
+	const redoLogRef = useRef<Array<'pikaso' | 'overlay'>>([])
+	const isUndoRedoRef = useRef(false)
+	const isLoadingRef = useRef(false)
+
+	// Listen to Pikaso shape events to record 'pikaso' actions in the unified log
+	useEffect(() => {
+		if (!drawCanvasEditor) return
+		const handler = () => {
+			if (isUndoRedoRef.current || isLoadingRef.current) return
+			actionLogRef.current = [...actionLogRef.current, 'pikaso']
+			redoLogRef.current = []
+		}
+		const events: Array<string> = ['shape:create', 'shape:move', 'shape:delete', 'shape:rotate', 'shape:undelete']
+		events.forEach(evt => drawCanvasEditor.on(evt as any, handler))
+		return () => {
+			events.forEach(evt => drawCanvasEditor.off(evt as any, handler))
+		}
+	}, [drawCanvasEditor])
 
 	const [presentMapURL, setPresentMapURL] = useState({
 		imgPrepareLink: mapList[0].imgPrepareLink,
@@ -127,27 +236,86 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 			...item,
 			id: Math.random().toString(36).substring(2, 9)
 		}
-		setCanvasItems(prev => [...prev, newItem])
+		dispatchCanvasItems({ type: 'ADD', item: newItem })
+		actionLogRef.current = [...actionLogRef.current, 'overlay']
+		redoLogRef.current = []
 	}
 
 	const handleUpdateCanvasItem = (id: string, updates: Partial<CanvasItem>) => {
-		setCanvasItems(prev => prev.map(item => item.id === id ? { ...item, ...updates } : item))
+		dispatchCanvasItems({ type: 'UPDATE', id, updates })
+		actionLogRef.current = [...actionLogRef.current, 'overlay']
+		redoLogRef.current = []
 	}
 
 	const handleDeleteCanvasItem = (id: string) => {
-		setCanvasItems(prev => prev.filter(item => item.id !== id))
+		dispatchCanvasItems({ type: 'DELETE', id })
+		actionLogRef.current = [...actionLogRef.current, 'overlay']
+		redoLogRef.current = []
 	}
+
+	// Unified undo: undo the last action on whichever canvas it occurred
+	const handleUndo = useCallback(() => {
+		const log = actionLogRef.current
+		if (log.length === 0) return
+		const lastAction = log[log.length - 1]
+		isUndoRedoRef.current = true
+		if (lastAction === 'pikaso') {
+			drawCanvasEditor?.undo()
+		} else {
+			dispatchCanvasItems({ type: 'UNDO' })
+		}
+		actionLogRef.current = log.slice(0, -1)
+		redoLogRef.current = [...redoLogRef.current, lastAction]
+		isUndoRedoRef.current = false
+	}, [drawCanvasEditor])
+
+	// Unified redo: redo the next action on whichever canvas it occurred
+	const handleRedo = useCallback(() => {
+		const redoLog = redoLogRef.current
+		if (redoLog.length === 0) return
+		const nextAction = redoLog[0]
+		isUndoRedoRef.current = true
+		if (nextAction === 'pikaso') {
+			drawCanvasEditor?.redo()
+		} else {
+			dispatchCanvasItems({ type: 'REDO' })
+		}
+		redoLogRef.current = redoLog.slice(1)
+		actionLogRef.current = [...actionLogRef.current, nextAction]
+		isUndoRedoRef.current = false
+	}, [drawCanvasEditor])
+
+	// Unified reset: clear both canvases and the action log
+	const handleReset = useCallback(() => {
+		drawCanvasEditor?.reset()
+		dispatchCanvasItems({ type: 'RESET' })
+		actionLogRef.current = []
+		redoLogRef.current = []
+	}, [drawCanvasEditor])
+
+	const setCanvasItems = useCallback((items: CanvasItem[]) => {
+		dispatchCanvasItems({ type: 'SET', items })
+	}, [])
 
 	const saveFile = () => {
 		save({ presentMap, mapPrepareMode, drawCanvasEditor, canvasItems })
 	}
 
 	const loadFile = () => {
+		isLoadingRef.current = true
 		load({ setPresentMap, setPresentMapURL, setMapPrepareMode, drawCanvasEditor, setCanvasItems })
+		actionLogRef.current = []
+		redoLogRef.current = []
+		// Delay resetting isLoadingRef to allow Pikaso events to settle
+		setTimeout(() => { isLoadingRef.current = false }, 100)
 	}
 
 	const loadJson = (json: any) => {
+		isLoadingRef.current = true
 		loadCurrentAppState({ json, setPresentMap, setPresentMapURL, setMapPrepareMode, drawCanvasEditor, setCanvasItems })
+		actionLogRef.current = []
+		redoLogRef.current = []
+		setTimeout(() => { isLoadingRef.current = false }, 100)
 	}
 
 	// Shared centering logic
@@ -192,7 +360,7 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 		}}>
 			<div className='no-select' style={{ position: "absolute", bottom: "20px", opacity: 0.1, fontSize: "25px", marginLeft: "30px" }}>
 				<div>Strinova Map Assistant</div>
-				<div style={{ fontSize: "18px" }}>khaos-experiences.fr/sma</div>
+				<div style={{ fontSize: "18px" }}>strinova.fsltech.cn</div>
 			</div>
 			<div style={{
 				position: 'absolute',
@@ -232,6 +400,9 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 					onDeleteItem={handleDeleteCanvasItem}
 					style={{ position: 'absolute', top: '0', left: '0', zIndex: 20 }}
 					canvasTransform={canvasTransform}
+					canvasTool={canvasTool}
+					selectedItemId={selectedOverlayItemId}
+					onSelectItem={setSelectedOverlayItemId}
 				/>
 			</div>
 		</div>
@@ -312,6 +483,16 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 											load={loadFile}
 											magnifierVisible={magnifierVisible}
 											setMagnifierVisible={setMagnifierVisible}
+											onUndo={handleUndo}
+											onRedo={handleRedo}
+											onReset={handleReset}
+											selectedOverlayItemId={selectedOverlayItemId}
+											deleteSelectedOverlayItem={() => {
+												if (selectedOverlayItemId) {
+													handleDeleteCanvasItem(selectedOverlayItemId)
+													setSelectedOverlayItemId(null)
+												}
+											}}
 										/>
 									</Sider>
 								</span>

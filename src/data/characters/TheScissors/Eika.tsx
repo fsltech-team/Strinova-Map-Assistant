@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.TheScissors,
 	id: TheScissors.Eika,
 	attack: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/a89bcd32_SrnDsxX5bAiBNcE.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/3e3ce001_SMVIPh4fqWzRruy.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Eika/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Eika/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/6a86b439_SPYXJZwHGObnrmV.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Eika/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/a5c351a1_JYfa5PdE6r4Kcio.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Eika/passive.png',
 				generateOnCanvas: passive
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/f519087c_sFgyUNK7iWtcvfp.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Eika/ultimate.png',
 				generateOnCanvas: ultimate
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/ab52e6c0_to7dWPDVuUFRsIn.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Eika/sub.png',
 				generateOnCanvas: tactical
 			}
 		}

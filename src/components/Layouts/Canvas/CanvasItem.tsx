@@ -6,10 +6,11 @@ interface CanvasItemProps {
   onUpdate: (id: string, updates: Partial<CanvasItemType>) => void
   onDelete: (id: string) => void
   isSelected: boolean
-  onSelect: (id: string) => void
+  onSelect: (id: string | null) => void
+  interactive: boolean
 }
 
-const CanvasItem: React.FC<CanvasItemProps> = ({ item, onUpdate, onDelete, isSelected, onSelect }) => {
+const CanvasItem: React.FC<CanvasItemProps> = ({ item, onUpdate, onDelete, isSelected, onSelect, interactive }) => {
   const [isDragging, setIsDragging] = useState(false)
   const [isRotating, setIsRotating] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
@@ -97,9 +98,9 @@ const CanvasItem: React.FC<CanvasItemProps> = ({ item, onUpdate, onDelete, isSel
     left: `${(item.x / 1000) * 100}%`,
     top: `${(item.y / 1000) * 100}%`,
     transform: `translate(-50%, -50%) rotate(${item.rotation || 0}deg)`,
-    cursor: isEditing ? 'text' : isDragging ? 'grabbing' : 'grab',
+    cursor: !interactive ? 'default' : isEditing ? 'text' : isDragging ? 'grabbing' : 'grab',
     userSelect: 'none',
-    pointerEvents: 'auto',
+    pointerEvents: interactive ? 'auto' : 'none',
     border: isSelected ? '2px solid rgba(77, 238, 234, 1)' : '2px solid transparent',
     padding: '2px',
     borderRadius: '4px',

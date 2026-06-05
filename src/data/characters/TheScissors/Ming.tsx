@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.TheScissors,
 	id: TheScissors.Ming,
 	attack: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/ffe4bebb_nuhFZjpVGgJSEyc.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/d94a9819_tgNeOR5Iow6Cakc.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Ming/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Ming/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/c128e142_NQ2TdSqhseRZY7b.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Ming/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/81dbb06e_bsAzZemy4uEcaHt.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Ming/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/6419b68a_CkhMrw23RbmBv5T.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Ming/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/3668d1dd_B6KC72wphAdt4Ri.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Ming/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

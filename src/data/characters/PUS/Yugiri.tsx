@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.PUS,
 	id: PUS.Yugiri,
 	defense: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/0d31fccb_Jq58o4vKDYUCcl1.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/7b93e62f_JZ2543e9CUYDh8p.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Yugiri/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Yugiri/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/1c26d086_oW4UsSziGHnhLx2.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yugiri/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/00cf465b_jBC3dyGxKzmpQf2.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yugiri/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/4bfae5b3_T4QIuUewCitmjbM.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yugiri/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/ae2311b8_T3huK4YzAXmrV8N.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yugiri/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

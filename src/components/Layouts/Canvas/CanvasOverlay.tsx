@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { CanvasItem as CanvasItemType } from '../../appShell'
+import { mapTools } from '../../../utils/canvasConstants'
 import CanvasItem from './CanvasItem'
 
 interface CanvasOverlayProps {
@@ -8,22 +9,25 @@ interface CanvasOverlayProps {
   onDeleteItem: (id: string) => void
   style?: React.CSSProperties
   canvasTransform: { x: number; y: number; scale: number }
+  canvasTool: mapTools
+  selectedItemId: string | null
+  onSelectItem: (id: string | null) => void
 }
 
-const CanvasOverlay: React.FC<CanvasOverlayProps> = ({ items, onUpdateItem, onDeleteItem, style, canvasTransform }) => {
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+const CanvasOverlay: React.FC<CanvasOverlayProps> = ({ items, onUpdateItem, onDeleteItem, style, canvasTransform, canvasTool, selectedItemId, onSelectItem }) => {
+  const isSelectMode = canvasTool === 'SELECT'
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       // If clicking on the canvas container but not on an item, deselect
       if (target.closest('.drawCanvas') && !target.closest('.canvas-item-container')) {
-        setSelectedId(null)
+        onSelectItem(null)
       }
     }
     window.addEventListener('mousedown', handleOutsideClick)
     return () => window.removeEventListener('mousedown', handleOutsideClick)
-  }, [])
+  }, [onSelectItem])
 
   const transform = {
     x: 0, // Parent is already centered
@@ -54,10 +58,11 @@ const CanvasOverlay: React.FC<CanvasOverlayProps> = ({ items, onUpdateItem, onDe
           <CanvasItem
             key={item.id}
             item={item}
-            isSelected={selectedId === item.id}
-            onSelect={setSelectedId}
+            isSelected={selectedItemId === item.id}
+            onSelect={onSelectItem}
             onUpdate={onUpdateItem}
             onDelete={onDeleteItem}
+            interactive={isSelectMode}
           />
         ))}
       </div>

@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.PUS,
 	id: PUS.Yvette,
 	defense: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/27720b57_eIVFmswk3tUlOcR.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/fa6cc966_AjGNVF4JLazbfHP.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Yvette/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Yvette/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/53aa8a5b_ESH6FNKQjbafMZn.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yvette/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/30617d8a_2hqoyUWsnbA83BP.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yvette/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/d94a72ee_Hzo6W4y8ib5ceqf.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yvette/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/15a053ce_32VnSv59tPwTIhl.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Yvette/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

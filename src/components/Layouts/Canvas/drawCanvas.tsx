@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useCallback, useState } from 'react'
+import React, { useLayoutEffect, useRef, useCallback } from 'react'
 import { DrawType, Pikaso, type BaseShapes } from 'pikaso'
 import { mapTools } from '../../../utils/canvasConstants'
 import { getDragValue, setDragValue } from '../../../data/dragAndDrop.ts'
@@ -214,13 +214,13 @@ const DrawMap: React.FC<PikasoMapProps> = ({
     }
   }
 
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+  const handlePointerDown = (_e: React.PointerEvent<HTMLDivElement>) => {
   }
 
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+  const handlePointerMove = (_e: React.PointerEvent<HTMLDivElement>) => {
   }
 
-  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+  const handlePointerUp = (_e: React.PointerEvent<HTMLDivElement>) => {
   }
 
   const handleOnDrop = (e: React.DragEvent<HTMLDivElement>| any) => {

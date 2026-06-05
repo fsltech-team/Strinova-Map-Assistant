@@ -6,23 +6,23 @@ const character: characterData = {
 	faction: factions.TheScissors,
 	id: TheScissors.Fragrans,
 	attack: {
-		canvasImage: import.meta.env.BASE_URL + 'images/remote/fa72cb3c_AM58XCKyixJlTGO.png',
-		bodyImage: import.meta.env.BASE_URL + 'images/remote/598755c0_6cwHibDP9QmfuVC.png',
+		canvasImage: import.meta.env.BASE_URL + 'images/character/Fragrans/icon.png',
+		bodyImage: import.meta.env.BASE_URL + 'images/character/Fragrans/body.png',
 		skills: {
 			active: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/ddc13f1f_L9j3uWBrl5hNyzx.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Fragrans/active.png',
 				generateOnCanvas: active
 			},
 			passive: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/d07d8431_B3HDdTpLjAyYQ74.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Fragrans/passive.png',
 				generateOnCanvas: passive
 			},
 			tactical: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/8f282e0d_JrTleR2xkfPysaA.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Fragrans/sub.png',
 				generateOnCanvas: tactical
 			},
 			ultimate: {
-				skillIcon: import.meta.env.BASE_URL + 'images/remote/639cf6c5_5Xk9PUOlwFsgE6B.png',
+				skillIcon: import.meta.env.BASE_URL + 'images/character/Fragrans/ultimate.png',
 				generateOnCanvas: ultimate
 			}
 		}

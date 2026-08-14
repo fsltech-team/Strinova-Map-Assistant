@@ -23,7 +23,8 @@ export enum TheScissors {
 	Kanami = "Kanami",
 	Eika = "Eika",
 	Fragrans = "Fragrans",
-	Mara = "Mara"
+	Mara = "Mara",
+	Nora = "Nora"
 }
 
 export enum Urbino {

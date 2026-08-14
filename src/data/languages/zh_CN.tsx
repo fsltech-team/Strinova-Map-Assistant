@@ -10,9 +10,9 @@ export default {
 	announcementdata: {
 		notshowntoday: "今日不再显示",
 		pin: {
-			title: "欸，竟然更新了？",
-			date: "2026.6.5",
-			summary: "在海外老哥的帮助下完成了更新，新增了放大镜功能进行局部放大",
+			title: "更新",
+			date: "2026.8.14",
+			summary: "新增超弦体诺诺",
 			data: {}
 		},
 		history: []
@@ -214,7 +214,8 @@ export default {
 			Kanami: '香奈美',
 			Eika: '艾卡',
 			Fragrans: '珐格兰丝',
-			Mara:'玛拉'
+			Mara:'玛拉',
+			Nora: '诺诺'
 		},
 		Urbino: {
 			Celestia: '星绘',
@@ -418,6 +419,18 @@ export default {
 			skillUltimateDescription: `选择离自己最近的一名敌方角色施加死亡印记：该敌人会被沉默，及仅玛拉可视的暴露状态。在此期间当玛拉参与击倒或击杀此角色，此印记会传导给一定范围内离玛拉最近的非倒地敌人，并重新计时。此效果会持续到玛拉死亡或者时间结束。`,
 			skillTacticalName: `亡灵漫步`,
 			skillTacticalDescription: `开启后，玛拉弦化时会进入特殊隐身状态，当敌人逐渐靠近时玛拉才会显形；且弦化移速增加；在终极技能触发时，显形的最远距离会进一步缩小。`,
+		},
+		Nora: {
+			Name: "诺诺",
+			Type: "决斗",
+			skillActiveName: `咒法！驭灵逐影`,
+			skillActiveDescription: `召唤出念灵向目标区域飞行，念灵会透视范围内的敌人，并锁定最近的敌人发动攻击，对目标造成伤害和准镜模糊效果`,
+			skillPassiveName: `咒法！踏空凌虚`,
+			skillPassiveDescription: `每隔一段时间，可以额外的进行第三段跳跃`,
+			skillUltimateName: `禁咒法！暗翳狂猎宴`,
+			skillUltimateDescription: `召唤出大量空的分身追踪范围内的敌人，空在靠近敌人后会发动攻击，造成伤害并限制目标的感知能力。`,
+			skillTacticalName: `咒法！贯幽伏祟`,
+			skillTacticalDescription: `命令念灵向目标方向快速发射可穿透掩体的暗弦能量，碰撞到人或主动激活后爆炸，对周围敌人造成伤害和减速，经过一段时间的汇聚后再次形成更加剧烈的爆炸`,
 		},
 		Celestia: {
 			Name: "星绘",

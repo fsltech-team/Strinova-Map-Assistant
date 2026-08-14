@@ -11,8 +11,8 @@ export default {
     notshowntoday: 'Compris',
     pin: {
       title: 'Mise à jours',
-      date: '2026.3.25',
-      summary: 'Correction de bugs, ajout de la langue française',
+      date: '2026.8.14',
+      summary: 'Ajout du nouveau personnage Nora',
       data: {}
     },
     history: []
@@ -263,7 +263,8 @@ export default {
       Kanami: 'Kanami',
       Eika: 'Eika',
       Fragrans: 'Fragrans',
-      Mara: 'Mara'
+      Mara: 'Mara',
+      Nora: 'Nora'
     },
     Urbino: {
       Celestia: 'Celestia',
@@ -467,6 +468,18 @@ export default {
       skillTacticalDescription: `Mara se transpose pour entrer en furtivité. Elle deviendra visible lorsqu'elle sera à proximité des ennemis. La vitesse de déplacement augmente et elle bénéficie d'une réduction des DÉG supplémentaire lors de la transposition.`,
       skillUltimateName: `Faucheuse`,
       skillUltimateDescription: `Mara marque l'ennemi le plus proche, ce qui le réduit au silence et révèle sa position. Si Mara neutralise ou élimine la cible, la marque est transférée à l'ennemi debout le plus proche à portée et sa durée est réinitialisée.`
+    },
+    Nora: {
+      Name: "Nora",
+      Type: "Duelliste",
+      skillActiveName: `咒法！驭灵逐影`,
+      skillActiveDescription: `召唤出念灵向目标区域飞行，念灵会透视范围内的敌人，并锁定最近的敌人发动攻击，对目标造成伤害和准镜模糊效果`,
+      skillPassiveName: `咒法！踏空凌虚`,
+      skillPassiveDescription: `每隔一段时间，可以额外的进行第三段跳跃`,
+      skillUltimateName: `禁咒法！暗翳狂猎宴`,
+      skillUltimateDescription: `召唤出大量空的分身追踪范围内的敌人，空在靠近敌人后会发动攻击，造成伤害并限制目标的感知能力。`,
+      skillTacticalName: `咒法！贯幽伏祟`,
+      skillTacticalDescription: `命令念灵向目标方向快速发射可穿透掩体的暗弦能量，碰撞到人或主动激活后爆炸，对周围敌人造成伤害和减速，经过一段时间的汇聚后再次形成更加剧烈的爆炸`,
     },
     Celestia: {
       Name: 'Celestia',

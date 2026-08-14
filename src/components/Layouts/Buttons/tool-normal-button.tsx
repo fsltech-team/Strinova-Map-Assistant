@@ -15,9 +15,9 @@ const toolNormalButton: React.FC<StandardButtonProps> = forwardRef<Button, Stand
     return (
       <Button
         ref={ref}
-        icon={<Icon size={'1.75rem'} />}
+        icon={<Icon size={'1.25rem'} />}
         size='large'
-        style={{ width: '100%', height: '3.5rem' }}
+        style={{ width: '100%', height: '2.5rem' }}
         type={typeOverride ? typeOverride : isActiveTool ? 'secondary' : 'tertiary'}
         onClick={onClick}
       />

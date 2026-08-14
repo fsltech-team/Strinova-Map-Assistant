@@ -460,9 +460,9 @@ const AppShell: React.FC<AppShellProps> = ({ characterData }) => {
 								}}>
 								{canvases}
 							</Content>
-							<span className='minHeightAvailable' style={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: 'calc(100svh - 7.5rem)', minWidth:'3.5rem' }}>
+							<span className='minHeightAvailable' style={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: 'calc(100svh - 7.5rem)', minWidth:'2.5rem' }}>
 								<span style={{display: 'table'}}>
-									<Sider style={{ backgroundColor: 'var(--semi-color-bg-1)', width: '3.5rem' }}>
+									<Sider style={{ backgroundColor: 'var(--semi-color-bg-1)', width: '2.5rem' }}>
 										<SiderTools
 											canvasTool={canvasTool}
 											setTool={setTool}

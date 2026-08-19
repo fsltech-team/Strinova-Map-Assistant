@@ -422,7 +422,7 @@ export default {
 		},
 		Nora: {
 			Name: "诺诺",
-			Type: "决斗",
+			Type: "先锋",
 			skillActiveName: `咒法！驭灵逐影`,
 			skillActiveDescription: `召唤出念灵向目标区域飞行，念灵会透视范围内的敌人，并锁定最近的敌人发动攻击，对目标造成伤害和准镜模糊效果`,
 			skillPassiveName: `咒法！踏空凌虚`,
